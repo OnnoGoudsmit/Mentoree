@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require "open-uri"
+
+puts "Destroying mentor"
+Mentor.destroy_all
+
+puts 'Creating 4 fake Mentors...'
+puts 'Finished creating Mentors'
+
+puts "Creating a new Mentor"
+
+
