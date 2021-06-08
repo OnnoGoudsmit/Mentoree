@@ -1,12 +1,35 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+
+.nav_links {
+  margin: 10px;
+
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+li, a, {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 15px;
+  color: #131313;
+  text-decoration: none;
+  display: inline;
+  padding: 1vw;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 5%;
+}
+
+.nav-title {
+  align-content: flex-start;
+}
+
+.item-1 {
+  align-content: left;
+}
+
+h2 {
+  font-family: "Suez One";
+  font-size: 40px;
 }
