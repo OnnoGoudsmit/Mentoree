@@ -11,3 +11,70 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  font-family: "Suez One";
+  font-size: 66px;
+}
+
+h2 {
+  font-family: "Suez One";
+  font-size: 48px;
+  text-align: center;
+  width: 400px;
+  margin: 10px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h4 {
+  font-family: "Suez One";
+  font-size: 20px;
+  align-content: center;
+  text-align: center;
+  width: 400px;
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+}
+
+li, a, {
+  font-family: "Work Sans";
+  font-weight: 500;
+  font-size: 18px;
+  color: #131313;
+  text-decoration: none;
+  display: inline;
+  padding: 1vw;
+}
+
+p {
+  font-family: "Work Sans";
+  font-size: 14px;
+  margin: 0px;
+  text-align: center;
+}
+
+p.italic {
+  font-style: italic;
+  font-size: 20px;
+}
+
+a {
+  width: 400px;
+  text-align: center;
+}
+
