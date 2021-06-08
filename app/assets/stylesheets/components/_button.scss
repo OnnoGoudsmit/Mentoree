@@ -3,6 +3,7 @@
   height: 50px;
   border-radius: 15px;
   border-color: #3835CA;
+  color: #3835CA;
 }
 
 .btn-sign-up {
@@ -20,4 +21,9 @@
   background: #3835CA;
   color: white;
 
+}
+
+.btn-nav {
+  display: flex;
+  align-items: center;
 }
