@@ -4,6 +4,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 30px 5%;
+
 }
 
 .footer-items {
@@ -23,9 +24,11 @@ p {
   font-size: 14px;
   margin: 0px;
   text-align: center;
+
 }
 
 .footer-links {
   display: flex;
-  justify-content: flex-end;bundl
+  justify-content: space-around;
+  margin-top: 10px;
 }
