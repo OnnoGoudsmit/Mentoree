@@ -13,7 +13,7 @@ User.destroy_all
 
 puts 'Creating Bob'
 
-user = User.new(
+user_bob = User.new(
     first_name: "Bob",
     last_name: Faker::Name.last_name,
     age: rand(30..50),
@@ -24,6 +24,8 @@ user = User.new(
     resume: Faker::Markdown.emphasis,
     password: "123456"
   )
+
+user_bob.save!
 
 puts 'Finished creating Bob'
 
@@ -52,7 +54,7 @@ puts 'Creating users'
 
   counter = 0
 
-20.times do | index |
+5.times do | index |
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
