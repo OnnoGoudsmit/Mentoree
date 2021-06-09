@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_06_09_095857) do
+=======
+ActiveRecord::Schema.define(version: 2021_06_09_091338) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +43,19 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
   create_table "advice_preferences", force: :cascade do |t|
     t.bigint "industry_id", null: false
     t.string "subject"
-    t.string "level"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["industry_id"], name: "index_advice_preferences_on_industry_id"
     t.index ["user_id"], name: "index_advice_preferences_on_user_id"
+  end
+
+  create_table "availabilities", force: :cascade do |t|
+    t.bigint "mentor_id"
+    t.datetime "slot"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mentor_id"], name: "index_availabilities_on_mentor_id"
   end
 
   create_table "industries", force: :cascade do |t|
@@ -54,12 +65,13 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.datetime "start_time"
     t.text "prep_content"
     t.bigint "mentor_id"
     t.bigint "mentoree_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "availability_id"
+    t.index ["availability_id"], name: "index_meetings_on_availability_id"
     t.index ["mentor_id"], name: "index_meetings_on_mentor_id"
     t.index ["mentoree_id"], name: "index_meetings_on_mentoree_id"
   end
@@ -95,6 +107,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "advice_preferences", "industries"
   add_foreign_key "advice_preferences", "users"
+  add_foreign_key "availabilities", "users", column: "mentor_id"
+  add_foreign_key "meetings", "availabilities"
   add_foreign_key "meetings", "users", column: "mentor_id"
   add_foreign_key "meetings", "users", column: "mentoree_id"
   add_foreign_key "reviews", "meetings"
