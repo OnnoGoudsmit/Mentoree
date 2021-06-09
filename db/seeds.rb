@@ -8,10 +8,28 @@
 require 'faker'
 require "open-uri"
 
-puts "Destroying mentor"
+puts "Destroying users"
 User.destroy_all
 
+puts 'Creating Bob'
 
+user_bob = User.new(
+    first_name: "Bob",
+    last_name: Faker::Name.last_name,
+    age: rand(30..50),
+    city: Faker::Address.city,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    about: Faker::Quote.matz,
+    email: "bob@email.com",
+    resume: Faker::Markdown.emphasis,
+    password: "123456"
+  )
+
+user_bob.save!
+
+puts 'Finished creating Bob'
+
+puts 'Creating users'
 
 # images = %w(allef-vinicius-C_1jjFJioWg-unsplash.jpeg
 # allison-griffith-Q76DPRQ3Ix0-unsplash.jpeg
@@ -36,7 +54,7 @@ User.destroy_all
 
   counter = 0
 
-20.times do | index |
+5.times do | index |
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -48,25 +66,28 @@ User.destroy_all
     resume: Faker::Markdown.emphasis,
     password: Faker::Internet.password
   )
+<<<<<<< HEAD
   puts "Creating user with picture number #{counter + 1}"
 
 
+=======
+  # puts "trying to debugg"
+>>>>>>> master
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-
 
   user.photo.attach(io: URI.open("https://unsplash.com/s/photos/random-people"), filename: "images-#{counter + 1}.png", content_type: 'image/png')
   user.save!
 end
 
-puts 'Finished creating Mentors/Mentorees'
+puts 'Finished creating users'
+
 
 puts "Destroying industries"
 Industry.destroy_all
 
 puts "Creating Industries"
-
-industry_array = ["Health Care", "Basic Materials", "Financials", "Utilities", "Telecommunications", "Financials", "Health Care", "Oil & Gas", "Industrials"];
+industry_array = ["Health Care", "Industrial Design", "Financials", "Utilities", "Telecommunications", "Financials", "Health Care", "Oil & Gas", "Wev-devlopment"];
 
 puts 'Finished creating Industries'
 
