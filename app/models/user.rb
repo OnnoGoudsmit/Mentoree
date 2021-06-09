@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :meetings
   has_many :reviews, through: :meetings
-<<<<<<< HEAD
+
   has_one_attached :photo
-=======
+
   has_many :advice_preferences
   has_many :industries, through: :advice_preferences
   has_many :availabilities
@@ -19,5 +19,5 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
   validates :about, presence: true, length: { minimum: 25 }
   validates :resume, presence: true, length: { minimum: 25 }
->>>>>>> master
+
 end
