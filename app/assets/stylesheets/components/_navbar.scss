@@ -1,18 +1,13 @@
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.navbar-mentoree {
+  justify-content: space-between;
+  background: white;
+  height: 10vh;
 }
 
-.nav_links {
-  margin: 10px;
+.navbar-mentoree .navbar-collapse {
+  flex-grow: 0;
 }
 
-.nav-title {
-  align-content: flex-start;
+.navbar-mentoree .navbar-brand img {
+  width: 120px;
 }
-
-.item-1 {
-  align-content: left;
-}
-
