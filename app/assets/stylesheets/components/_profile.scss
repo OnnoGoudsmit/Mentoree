@@ -16,8 +16,13 @@
   text-align: left;
 }
 
-.card-mentor-big h3 {
-  text-align: left;
-  margin: 0;
+.card-mentor-big .stats-mentor {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.card-mentor-big .stats-mentor h3 {
+  text-align: right;
 }
 
