@@ -74,6 +74,13 @@ p {
   color: $m-dark-grey;
 }
 
+.paragraph-navbar {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: $m-dark-grey;
+}
+
 body {
   margin: 0;
   background-color: $m-tan;
@@ -91,12 +98,12 @@ a {
   color: rgb(20,20,20)
 }
 
-a :hover {
+a:hover {
   text-decoration: none;
-  color: rgb(20,20,20)
+  color: $m-dark-purple;
 }
 
-a .navbar-anchor {
+a.navbar-anchor {
   text-decoration: none;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
@@ -104,6 +111,5 @@ a .navbar-anchor {
 }
 
 .container {
-  margin: 30px auto;
-
+  margin: 10px auto;
 }

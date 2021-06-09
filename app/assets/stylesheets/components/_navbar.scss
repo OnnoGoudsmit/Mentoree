@@ -1,13 +1,12 @@
 .navbar-mentoree {
+  display: flex;
   justify-content: space-between;
-  background: white;
-  height: 10vh;
+  background: $m-tan;
+  height: 75px;
 }
 
 .navbar-mentoree .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-mentoree .navbar-brand img {
-  width: 120px;
-}
+
