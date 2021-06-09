@@ -66,13 +66,13 @@ puts 'Creating users'
     resume: Faker::Markdown.emphasis,
     password: Faker::Internet.password
   )
-<<<<<<< HEAD
+
   puts "Creating user with picture number #{counter + 1}"
 
 
-=======
+
   # puts "trying to debugg"
->>>>>>> master
+
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
