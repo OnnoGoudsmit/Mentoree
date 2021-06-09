@@ -48,7 +48,7 @@ User.destroy_all
     resume: Faker::Markdown.emphasis,
     password: Faker::Internet.password
   )
-  puts "trying to debugg"
+  puts "Creating user with picture number #{counter + 1}"
 
 
 
