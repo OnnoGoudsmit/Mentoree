@@ -1,48 +1,30 @@
-.btn-log-in {
-  width: 160px;
-  height: 50px;
-  border-radius: 15px;
-  border-color: #3835CA;
-  color: #3835CA;
+.btn-ghost {
+  padding: 12px 44px;
+  border-radius: 30px;
+  border-color: $m-purple;
+  color: $m-purple;
 
 }
 
-.btn-log-in:hover {
-  width: 160px;
-  height: 50px;
-  border-radius: 15px;
-  border-color: #706ED8;
+.btn-ghost:hover {
+  padding: 12px 44px;
+  border-radius: 30px;
+  border-color: $m-dark-purple;
   color: white;
-  background-color: #706ED8;
+  background-color: $m-dark-purple;
 }
 
 
-.btn-sign-up {
-  width: 160px;
-  height: 50px;
-  border-radius: 15px;
-  background: #3835CA;
+.btn-flat {
+  padding: 12px 44px;
+  border-radius: 30px;
+  background: $m-purple;
   color: white;
 }
 
-.btn-sign-up:hover {
-  width: 160px;
-  height: 50px;
-  border-radius: 15px;
-  background: #706ED8;
+.btn-flat:hover {
+  padding: 12px 44px;
+  border-radius: 30px;
+  background: $m-dark-purple;
   color: white;
-}
-
-.btn-search {
-  width: 202px;
-  height: 50px;
-  border-radius: 15px;
-  background: #3835CA;
-  color: white;
-
-}
-
-.btn-nav {
-  display: flex;
-  align-items: center;
 }

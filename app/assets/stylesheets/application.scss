@@ -15,28 +15,33 @@
 h1 {
   font-family: "Suez One";
   font-size: 40px;
+  color: $m-dark-grey;
 }
 
 .h1-homepage {
   font-family: "Suez One";
   font-size: 50px;
+  color: $m-dark-grey;
 }
 
 h2 {
   font-family: 'Work Sans', sans-serif;
   font-size: 30px;
+  color: $m-dark-grey;
 }
 
 h3 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
   font-size: 20px;
+  color: $m-dark-grey;
 }
 
 h4 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
   font-size: 17px;
+  color: $m-dark-grey;
 }
 
 
@@ -44,18 +49,21 @@ p {
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   font-size: 17px;
+  color: $m-dark-grey;
 }
 
 .paragraph-light {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
   font-size: 17px;
+  color: $m-dark-grey;
 }
 
 .paragraph-note {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
   font-size: 13px;
+  color: $m-dark-grey;
 }
 
 .paragraph-italic {
@@ -63,6 +71,14 @@ p {
   font-style:  italic;
   font-weight: 400;
   font-size: 17px;
+  color: $m-dark-grey;
+}
+
+.paragraph-navbar {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: $m-dark-grey;
 }
 
 body {
@@ -70,22 +86,24 @@ body {
   background-color: $m-tan;
 }
 
-li, a, {
-  font-family: "Work Sans";
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-}
+// li, a, {
+//   font-family: "Work Sans";
+//   font-weight: 600;
+//   font-size: 18px;
+//   text-decoration: none;
+// }
 
 a {
   text-decoration: none;
+  color: rgb(20,20,20)
 }
 
-a :hover {
+a:hover {
   text-decoration: none;
+  color: $m-dark-purple;
 }
 
-a .navbar-anchor {
+a.navbar-anchor {
   text-decoration: none;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
@@ -93,6 +111,5 @@ a .navbar-anchor {
 }
 
 .container {
-  margin: 30px auto;
-
+  margin: 10px auto;
 }

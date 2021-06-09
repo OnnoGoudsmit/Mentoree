@@ -1,18 +1,12 @@
-.navbar {
+.navbar-mentoree {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  background: $m-tan;
+  height: 75px;
 }
 
-.nav_links {
-  margin: 10px;
+.navbar-mentoree .navbar-collapse {
+  flex-grow: 0;
 }
 
-.nav-title {
-  align-content: flex-start;
-}
-
-.item-1 {
-  align-content: left;
-}
 

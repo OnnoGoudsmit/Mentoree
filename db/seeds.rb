@@ -11,9 +11,32 @@ require "open-uri"
 puts "Destroying mentor"
 User.destroy_all
 
-puts "Creating Mentors/Mentorees"
 
-20.times do
+
+# images = %w(allef-vinicius-C_1jjFJioWg-unsplash.jpeg
+# allison-griffith-Q76DPRQ3Ix0-unsplash.jpeg
+# austin-wade-X6Uj51n5CE8-unsplash.jpeg
+# charles-etoroma-95UF6LXe-Lo-unsplash.jpeg
+# christian-buehner-DItYlc26zVI-unsplash.jpeg
+# christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpeg
+# courtney-cook-TSZo17r3m0s-unsplash.jpeg
+# dahiana-waszaj-XQWfro4LrVs-unsplash.jpeg
+# dahiana-waszaj-Xbe20Z_DlDs-unsplash.jpeg
+# ethan-haddox-NTjSR3zYpsY-unsplash.jpeg
+# gregory-hayes-SCbycmUSAaE-unsplash.jpeg
+# harps-joseph-tAvpDE7fXgY-unsplash.jpeg
+# jack-finnigan-rriAI0nhcbc-unsplash.jpeg
+# jonas-kakaroto-KIPqvvTOC1s-unsplash.jpeg
+# matheus-ferrero-W7b3eDUb_2I-unsplash.jpeg
+# michael-dam-mEZ3PoFGs_k-unsplash.jpeg
+# michael-mims-fWWiaDox0BU-unsplash.jpeg
+# roland-samuel-MZ5A24H1JqU-unsplash.jpeg
+# shipman-northcutt-sgZX15Da8YE-unsplash.jpeg
+# wes-hicks-4-EeTnaC1S4-unsplash.jpeg)
+
+  counter = 0
+
+20.times do | index |
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -25,6 +48,14 @@ puts "Creating Mentors/Mentorees"
     resume: Faker::Markdown.emphasis,
     password: Faker::Internet.password
   )
+  puts "trying to debugg"
+
+
+
+# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+
+
+  user.photo.attach(io: URI.open("https://unsplash.com/s/photos/random-people"), filename: "images-#{counter + 1}.png", content_type: 'image/png')
   user.save!
 end
 
