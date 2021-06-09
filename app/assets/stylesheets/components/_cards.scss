@@ -1,12 +1,11 @@
-.main-card {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  width: 440px;
+.card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.1);
 }
 
-.main-content-1 {
- text-align: center;
- width: 400px;
- height: 100px;
-}
+
+
+
