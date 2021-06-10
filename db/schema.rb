@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_095857) do
+ActiveRecord::Schema.define(version: 2021_06_10_124322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,13 +62,11 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
 
   create_table "meetings", force: :cascade do |t|
     t.text "prep_content"
-    t.bigint "mentor_id"
     t.bigint "mentoree_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "availability_id"
     t.index ["availability_id"], name: "index_meetings_on_availability_id"
-    t.index ["mentor_id"], name: "index_meetings_on_mentor_id"
     t.index ["mentoree_id"], name: "index_meetings_on_mentoree_id"
   end
 
@@ -95,9 +93,18 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
     t.string "city"
     t.string "phone_number"
     t.text "about"
-    t.text "resume"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_industries", force: :cascade do |t|
+    t.text "work_experience"
+    t.bigint "user_id", null: false
+    t.bigint "industry_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["industry_id"], name: "index_users_industries_on_industry_id"
+    t.index ["user_id"], name: "index_users_industries_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -105,7 +112,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_095857) do
   add_foreign_key "advice_preferences", "users"
   add_foreign_key "availabilities", "users", column: "mentor_id"
   add_foreign_key "meetings", "availabilities"
-  add_foreign_key "meetings", "users", column: "mentor_id"
   add_foreign_key "meetings", "users", column: "mentoree_id"
   add_foreign_key "reviews", "meetings"
+  add_foreign_key "users_industries", "industries"
+  add_foreign_key "users_industries", "users"
 end
