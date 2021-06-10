@@ -16,13 +16,24 @@
   text-align: left;
 }
 
-.card-mentor-big .stats-mentor {
+.stats-mentor {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  text-align: right;
 }
 
 .card-mentor-big .stats-mentor h3 {
   text-align: right;
+}
+
+.card-profile {
+  padding: 16px;
+}
+
+.profile-info {
+  border-top: 1px solid $m-dark-grey;
+  border-bottom: 1px solid $m-dark-grey;
+  margin: 0 16px;
 }
 
