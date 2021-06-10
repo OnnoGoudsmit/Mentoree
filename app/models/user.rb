@@ -12,12 +12,15 @@ class User < ApplicationRecord
   has_many :industries, through: :advice_preferences
   has_many :availabilities
 
+
+
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :age, presence: true, numericality: { greater_than: 16 }
-  validates :city, presence: true
-  validates :phone_number, presence: true
-  validates :about, presence: true, length: { minimum: 25 }
-  validates :resume, presence: true, length: { minimum: 25 }
 
+  validates :age, presence: true, numericality: { greater_than: 16 }, unless: :new_record?
+
+  validates :phone_number, presence: true, unless: :new_record?
+  validates :about, presence: true, length: { minimum: 25 }, unless: :new_record?
+
+  # add the rest of the validation once the first form is done.
 end
