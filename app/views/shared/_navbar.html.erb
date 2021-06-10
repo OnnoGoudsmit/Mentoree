@@ -14,18 +14,19 @@
 <!--     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button> -->
-
-  <div class="navbar-menu">
-    <a href="#about" class="paragraph-navbar mx-3">about</a>
-    <a href="#works" class="paragraph-navbar mx-3">how it works</a>
-    <a href="#testimonials" class="paragraph-navbar mx-3">testimonials</a>
-    <a href="#contact" class="paragraph-navbar mx-3">contact</a>
-  </div>
+  <% if current_page?(root_path) %>
+    <div class="navbar-menu">
+      <a href="#about" class="paragraph-navbar mx-3">about</a>
+      <a href="#works" class="paragraph-navbar mx-3">how it works</a>
+      <a href="#testimonials" class="paragraph-navbar mx-3">testimonials</a>
+      <a href="#contact" class="paragraph-navbar mx-3">contact</a>
+    </div>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
-      <% if user_signed_in? %>
+      <% if user_signed_in?  %>
 
         <li class="nav-item dropdown">
           <%= image_tag "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png", class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
