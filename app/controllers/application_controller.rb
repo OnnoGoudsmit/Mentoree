@@ -28,12 +28,3 @@ class ApplicationController < ActionController::Base
 end
 
 
-
-
-
-# In application controller allow params of devise for edit registration
-#  with new params. (Editing happening after sign up in profile forms).
-
-# silo:
-# route users only edit and update
-# generate controller edit and update action
