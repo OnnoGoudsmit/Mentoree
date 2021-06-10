@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'draft', to: 'pages#draft'
   get 'draft2', to: 'pages#draft2'
 
-
+  resources :after_sign_up, only: [:new, :update]
+  resources :users, only: [:edit, :update]
   resources :meetings, only: [:index]
 
   get 'my_dashboard', to: 'dashboard#my_dashboard'
