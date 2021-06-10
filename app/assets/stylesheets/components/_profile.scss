@@ -37,3 +37,14 @@
   margin: 0 16px;
 }
 
+.date-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-buttons .btn {
+  margin-top: 8px;
+  width: 40%;
+}
