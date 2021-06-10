@@ -62,7 +62,6 @@ puts 'Creating users'
     phone_number: Faker::PhoneNumber.cell_phone,
     about: Faker::Quote.matz,
     email: Faker::Internet.email,
-    resume: Faker::Markdown.emphasis,
     password: Faker::Internet.password
   )
 
