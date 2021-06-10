@@ -1,13 +1,16 @@
 
+<div class="card">
 
-<%= simple_form_for current_user, url: after_sign_up_path(current_user) do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :age %>
-    <%= f.input :phone_number %>
-    <%= f.input :city %>
-    <%= f.input :about %>
-    <%= f.input :photo, as: :file %>
-  <%= f.submit :Edit %>
+  <%= simple_form_for current_user, url: after_sign_up_path(current_user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :age %>
+      <%= f.input :phone_number %>
+      <%= f.input :city %>
+      <%= f.input :about %>
+      <%= f.input :photo, as: :file %>
+    <%= f.submit :Edit %>
 
-<% end %>
+  <% end %>
+
+</div>
