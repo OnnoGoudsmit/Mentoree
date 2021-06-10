@@ -11,9 +11,19 @@
   width: 440px;
 }
 
-.home-page-text-2 {
+.home-page-block-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.home-page-block-2 {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0px;
 }
 
 .white-background-home {
