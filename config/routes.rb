@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   resources :meetings, only: [:index]
 
-  get 'my_dashboard', to 'dahsboard#my_dashboard'
+  get 'my_dashboard', to: 'dashboard#my_dashboard'
 
 end

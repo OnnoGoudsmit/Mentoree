@@ -1,0 +1,27 @@
+<!-- Template for using columns inside columns -->
+
+<div class="row">
+  <!-- Use offset to create empty columns on the side -->
+  <div class="col-8 offset-2 card card-dashboard">
+    <div class="row">
+      <!-- Create as many divs as you want, as long as col adds up to 12 -->
+      <div class="col-12">
+        <!-- Place content here -->
+        <h2>My dashboard</h2>
+        <p>Information in dashboard</p>
+        <div>
+          <%= link_to "complete profile", edit_user_registration_path, class: "btn btn-flat" %>
+          <%= link_to "Fill adivce preference", edit_user_registration_path, class: "btn btn-ghost" %>
+          <%= link_to "Prepare meeting", edit_user_registration_path, class: "btn btn-ghost" %>
+          <%= link_to "Find mentor", edit_user_registration_path, class: "btn btn-ghost" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
