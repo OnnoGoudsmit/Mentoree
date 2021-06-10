@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :meetings, only: [:index]
+
+  get 'my_dashboard', to 'dahsboard#my_dashboard'
+
 end
