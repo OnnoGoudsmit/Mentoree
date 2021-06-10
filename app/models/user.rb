@@ -14,10 +14,6 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :age, presence: true, numericality: { greater_than: 16 }
-  validates :city, presence: true
-  validates :phone_number, presence: true
-  validates :about, presence: true, length: { minimum: 25 }
-  validates :resume, presence: true, length: { minimum: 25 }
-
+  validates :age, numericality: { greater_than: 16 }
+  validates :about, length: { minimum: 25 }, allow_nil: true
 end
