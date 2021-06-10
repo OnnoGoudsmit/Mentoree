@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :after_sign_up, only: [:new, :update]
   resources :users, only: [:edit, :update]
   resources :meetings, only: [:index]
+
+  get 'my_dashboard', to: 'dashboard#my_dashboard'
+
 end

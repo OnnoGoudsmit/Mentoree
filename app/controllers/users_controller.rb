@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 end
 
-
 # STORY SIGN UP
 # 1- TODO: edit validations User model only first_name and last_name in presence: true. CHECK
 
