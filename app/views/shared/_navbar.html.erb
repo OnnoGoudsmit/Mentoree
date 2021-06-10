@@ -16,10 +16,10 @@
   </button> -->
 
   <div class="navbar-menu">
-    <a href="" class="paragraph-navbar mx-3">about</a>
-    <a href="" class="paragraph-navbar mx-3">how it works</a>
-    <a href="" class="paragraph-navbar mx-3">testimonials</a>
-    <a href="" class="paragraph-navbar mx-3">contact</a>
+    <a href="#about" class="paragraph-navbar mx-3">about</a>
+    <a href="#works" class="paragraph-navbar mx-3">how it works</a>
+    <a href="#testimonials" class="paragraph-navbar mx-3">testimonials</a>
+    <a href="#contact" class="paragraph-navbar mx-3">contact</a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,9 +30,10 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png", class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
             <%= link_to "My dashboard", my_dashboard_path, class: "dropdown-item" %>
             <%= link_to "Meetings", "#", class: "dropdown-item" %>
-            <%= link_to "Edit Profile", "#", class: "dropdown-item" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -47,5 +48,3 @@
     </ul>
   </div>
 </div>
-
-
