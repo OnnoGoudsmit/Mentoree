@@ -23,4 +23,9 @@ class User < ApplicationRecord
   validates :about, presence: true, length: { minimum: 25 }, unless: :new_record?
 
   # add the rest of the validation once the first form is done.
+
+  def user_to_complete_profile
+    # if self.city.first_name.etc? return true
+  end
+
 end

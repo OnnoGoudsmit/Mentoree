@@ -1,6 +1,6 @@
 
 
-<%= simple_form_for current_user, url: after_sign_up_path(current_user) do |f| %>
+<%= simple_form_for current_user, url: my_dashboard_path(current_user) do |f| %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :age %>
