@@ -21,7 +21,6 @@ user_bob = User.new(
     phone_number: Faker::PhoneNumber.cell_phone,
     about: Faker::Quote.matz,
     email: "bob@email.com",
-    resume: Faker::Markdown.emphasis,
     password: "123456"
   )
 
