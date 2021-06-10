@@ -1,14 +1,22 @@
 // Specific CSS for your home-page
 
 .homepage-text {
+  margin-top: 70px;
+  margin-bottom: 70px;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  text-align: center;
+  // p { text-align: left; } Use this?
   width: 440px;
 }
 
-.homepage-text {
- text-align: center;
- width: 400px;
- height: 100px;
+.home-page-text-2 {
+  display: flex;
+  flex-direction: row-reverse;
 }
+
+.white-background-home {
+  background-color: white;
+}
+
