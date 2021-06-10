@@ -11,10 +11,11 @@
           <h3>Industry</h3>
           <p>Job role</p>
           <p>Description</p>
+          <!-- Cut of the description after n amount of letters
+          description.truncate(40) -->
         </div>
-        <div class="stats-mentor p-3 col-2 text-right">
-          <h3>24 <i class="fas fa-eye"></i></h3>
-          <br>
+        <div class="stats-mentor p-3 col-2">
+          <h3 class="pb-2">24 <i class="fas fa-eye"></i></h3>
           <h3>18 <i class="far fa-thumbs-up"></i></h3>
         </div>
       </div>
@@ -25,25 +26,67 @@
 <!-- Mentor small profile card -->
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
+    <!-- Repeat this 3 times for additional coaches -->
+    <div class="col-6 offset-3 card">
       <div class="row">
-        <div class="card col 2">
-
+        <div class="mentor-avatar-big col-3 align-self-center">
+          <img class="avatar-medium" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
         </div>
-        <div class="col-1"></div>
-        <div class="card col-2">
-
+        <div class="mentor-info p-3 col-7">
+          <h3>Firstname</h3>
+          <h4>Industry</h4>
+          <p>Job role</p>
         </div>
-        <div class="col-1"></div>
-        <div class="card col-2">
+        <div class="stats-mentor p-3 col-2">
+          <h4>24 <i class="fas fa-eye"></i></h4>
+          <h4>18 <i class="far fa-thumbs-up"></i></h4>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</div>
+
+<!-- Mentor profile card -->
+<div class=" container">
+  <div class="row">
+    <div class="col-10 offset-1 card card-profile">
+      <h2 class="text-center">Mentor profile</h2>
+      <div class="row profile-info">
+        <div class="mentor-avatar-big col-3 align-self-center">
+          <img class="avatar-large" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
+        </div>
+        <div class="mentor-info col-7 text-left p-3">
+          <h2>Firstname Lastname</h2>
+          <h3>Industry</h3>
+          <p>Job role</p>
+          <p>Description</p>
+          <ul>
+            <li><strong>Industry</strong> - experience</li>
+            <li><strong>Industry</strong> - experience</li>
+            <li><strong>Industry</strong> - experience</li>
+          </ul>
+        </div>
+        <div class="stats-mentor p-3 col-2">
+          <h3 class="pb-2">24 <i class="fas fa-eye"></i></h3>
+          <h3>18 <i class="far fa-thumbs-up"></i></h3>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Mentor profile card -->
-<!-- <div class="card">
 
+<!-- Template for using columns inside columns -->
+<div class="container">
+  <div class="row">
+    <!-- Use offset to create empty columns on the side -->
+    <div class="col-6 offset-3 card">
+      <div class="row">
+        <!-- Create as many divs as you want, as long as col adds up to 12 -->
+        <div class="col-12">
+          <!-- Place content here -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
- -->
