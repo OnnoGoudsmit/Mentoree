@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :age, :city, :phone_number, :about, :resume, :photo])
+
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :age, :city, :phone_number, :about, :resume, :photo])
   end
 
@@ -24,3 +26,14 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 end
+
+
+
+
+
+# In application controller allow params of devise for edit registration
+#  with new params. (Editing happening after sign up in profile forms).
+
+# silo:
+# route users only edit and update
+# generate controller edit and update action
