@@ -1,7 +1,37 @@
-<div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page-block-1">
+  <div class='homepage-text'>
+    <h1 class="h1-homepage">Need some career advice?</h1>
+    <h4>We got you.</h4>
+    <p>Join us so we can connect you to an experienced mentor in various fields of work for free! These mentors have volunteer to guide and help professionals make the right career choices.</p>
 
-  <%= link_to "Components1", draft_path  %>
-  <%= link_to "Components2", draft2_path  %>
+    <% unless user_signed_in? %>
+      <div>
+        <%= link_to "Sign up", new_user_registration_path, class:"btn btn-flat"  %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= image_tag "homepage-illustrations-1.png", alt: "mentoree image", height: 400 %>
+  </div>
+
+</div></div> <!-- Closing application.html.erb container -->
+
+
+<div class="white-background-home"><div class="container">   <!-- Opening application.html.erb container -->
+
+  <div class="home-page-block-2">
+    <div class='homepage-text'>
+      <h1 class="h1-homepage">Who are we?</h1>
+      <p>Join us so we can connect you to an experienced mentor in various fields of work. These mentors have volunteer to guide and help others. Join us so we can connect you to an experienced mentor in various fields of work. These mentors have volunteer to guide and help others.</p>
+    </div>
+
+    <div>
+      <%= image_tag "homepage-illustrations-2.png", alt: "mentoree image", height: 400 %>
+    </div>
+
+  </div>
+
 </div>
+
+
