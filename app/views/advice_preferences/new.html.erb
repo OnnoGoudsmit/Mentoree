@@ -1,21 +1,26 @@
-<div class="row">
-  <div class="col-8 offset-2 card p-3">
+<div class="container-form">
 
-    <h2>Advice Preference</h2>
-    <p>To connect you to the right person please fill the advice preference form.</p>
+  <div class="row">
+    <div class="col-8 offset-2 card p-3">
+      <div class="card-advice-preference">
 
-    <%= simple_form_for [ @user, @advice_preference ], url: after_sign_up_advice_preferences_path(@user) do |f| %>
+        <h2>Advice Preference</h2>
+        <p>To connect you to the right person please fill the advice preference form.</p>
 
-      <%#= f.input :radio, as: :select, include_blank: false, collection: ['Yes','No'] %>
-      <%= f.association :industry %>
-      <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS %>
+        <%= simple_form_for [ @user, @advice_preference ], url: after_sign_up_advice_preferences_path(@user) do |f| %>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Submit", class: "btn btn-flat" %>
+          <div class="form-inputs">
+            <%= f.association :industry %>
+            <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Submit", class: "btn btn-flat" %>
+          </div>
+
+        <% end %>
       </div>
+   </div>
+  </div>
 
-    <% end %>
-
- </div>
 </div>
-
