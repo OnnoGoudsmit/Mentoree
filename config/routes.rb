@@ -11,9 +11,14 @@ Rails.application.routes.draw do
   resources :after_sign_up, only: [:new, :update]
   resources :meetings, only: [:index]
 
-
-
   # Dashboard route
   get 'my_dashboard', to: 'dashboard#my_dashboard'
+
+  # Advice Preference routes
+  # resources :advice_preferences, only: [:new, :create]
+
+  resources :after_sign_up do
+    resources :advice_preferences, only: [ :new, :create ]
+  end
 
 end
