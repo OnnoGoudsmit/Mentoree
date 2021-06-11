@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :advice_preferences
   has_many :industries, through: :advice_preferences
-  has_many :availabilities
+  has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
