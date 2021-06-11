@@ -1,5 +1,14 @@
 class AfterSignUpController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.new
+    skip_authorization
+  end
+
   def new
     skip_authorization
   end
@@ -21,3 +30,7 @@ class AfterSignUpController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :age, :phone_number, :city, :about)
   end
 end
+
+
+
+# User can see all mentors (index)
