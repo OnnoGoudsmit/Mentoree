@@ -65,21 +65,57 @@ puts 'Creating users'
     email: Faker::Internet.email,
     password: Faker::Internet.password
   )
+  user.save!
+end
 
   puts "Creating user with picture number #{counter}"
 
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-
-  user.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-#{counter += 1}.png", content_type: 'image/png')
-  user.save!
-
-  3.times do |index|
-    Availability.create(
-      mentor_id: user.id,
-      slot: Date.today+rand(10000)
-      )
-  end
+user_one = User.first.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-first.png", content_type: 'image/png')
+3.times do |index|
+  Availability.create(
+    mentor_id: user_one,
+    slot: Date.today+rand(10000)
+    )
 end
+# user_one.update!
+
+user_two = User.second.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
+3.times do |index|
+  Availability.create(
+    mentor_id: user_two,
+    slot: Date.today+rand(10000)
+    )
+end
+# user_two.update!
+
+user_three = User.third.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
+3.times do |index|
+  Availability.create(
+    mentor_id: user_three,
+    slot: Date.today+rand(10000)
+    )
+end
+# user_three.update!
+
+user_four = User.fourth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
+3.times do |index|
+  Availability.create(
+    mentor_id: user_four,
+    slot: Date.today+rand(10000)
+    )
+end
+# user_four.update!
+
+user_five = User.fifth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
+3.times do |index|
+  Availability.create(
+    mentor_id: user_five,
+    slot: Date.today+rand(10000)
+    )
+end
+# user_five.update!
+
+
 
 puts 'Finished creating users'
 
