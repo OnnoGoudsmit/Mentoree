@@ -1,3 +1,3 @@
 class Industry < ApplicationRecord
-  belongs_to :advice_preferences
+  has_many :advice_preferences
 end
