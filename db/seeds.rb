@@ -65,7 +65,7 @@ puts 'Creating users'
     password: Faker::Internet.password
   )
 
-  puts "Creating user with picture number #{counter += 1}"
+  puts "Creating user with picture number #{counter}"
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 

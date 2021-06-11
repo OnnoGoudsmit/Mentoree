@@ -19,7 +19,7 @@ class AfterSignUpController < ApplicationController
   def update
     skip_authorization
     if current_user.update(user_params)
-      redirect_to root_path
+      redirect_to my_dashboard_path(current_user)
     else
       render :new
     end

@@ -10,23 +10,33 @@
         <h2>Dashboard</h2>
 
         <div class="dashboard-content">
-        <p><%= test_helper_method(current_user) %></p>
+        <p><%#= test_helper_method(current_user) %></p>
         <p>Welcome <%= @user.first_name.capitalize %></p>
         </div>
 
         <div class="dashboard-button">
-          <%= link_to "complete profile", new_after_sign_up_path, class: "btn btn-flat" %>
+          <%= link_to "complete profile", new_after_sign_up_path, class: "btn btn-ghost" %>
           <%#= link_to "Fill adivce preference", root_path, class: "btn btn-ghost" %>
           <%#= link_to "Prepare meeting", root_path, class: "btn btn-ghost" %>
           <%#= link_to "Find mentor", root_path, class: "btn btn-ghost" %>
         </div>
 
         <div><br>
-          <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(current_user), class: "btn btn-flat" %>
+          <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(current_user), class: "btn btn-ghost" %>
+        </div>
+
+        <div><br>
+          <%= link_to 'Find mentor',after_sign_up_index_path, class: "btn btn-flat" %>
         </div>
 
       </div>
     </div>
+  </div>
+  <div class="cactus-illustration-4">
+    <%= image_tag "mentoree-illustration-4", alt: "mentoree image", height: 150 %>
+  </div>
+  <div class="plant-illustration-5">
+    <%= image_tag "mentoree-illustration-5", alt: "mentoree image", height: 150 %>
   </div>
 </div>
 
