@@ -11,6 +11,7 @@ require "open-uri"
 puts "Destroying users"
 User.destroy_all
 
+
 puts 'Creating Bob'
 
 user_bob = User.new(
@@ -69,8 +70,15 @@ puts 'Creating users'
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
-  user.photo.attach(io: URI.open("https://unsplash.com/s/photos/random-people"), filename: "images-#{counter += 1}.png", content_type: 'image/png')
+  user.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-#{counter += 1}.png", content_type: 'image/png')
   user.save!
+
+  3.times do |index|
+    Availability.create(
+      mentor_id: user.id,
+      slot: Date.today+rand(10000)
+      )
+  end
 end
 
 puts 'Finished creating users'
