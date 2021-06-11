@@ -1,11 +1,9 @@
 class AdvicePreferencesController < ApplicationController
 
   def new
+    skip_authorization
     @user = current_user
-    @advice_preference = Advice_preferences.new
-
-    # @restaurant = Restaurant.find(params[:restaurant_id])
-    # @review = Review.new
+    @advice_preference = AdvicePreference.new
   end
 
 end

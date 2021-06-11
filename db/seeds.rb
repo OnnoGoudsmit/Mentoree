@@ -65,22 +65,27 @@ puts 'Creating users'
     password: Faker::Internet.password
   )
 
-  puts "Creating user with picture number #{counter + 1}"
-
-
-
-  # puts "trying to debugg"
-
+  puts "Creating user with picture number #{counter += 1}"
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 
-  user.photo.attach(io: URI.open("https://unsplash.com/s/photos/random-people"), filename: "images-#{counter + 1}.png", content_type: 'image/png')
+  user.photo.attach(io: URI.open("https://unsplash.com/s/photos/random-people"), filename: "images-#{counter += 1}.png", content_type: 'image/png')
   user.save!
 end
 
 puts 'Finished creating users'
 
+puts "Destroying industries"
 
+Industry.destroy_all
 
+puts 'Creating Industries'
 
+industries_array = ["Health Care", "Industrial Design", "Financing", "Engineering", "Hospitality", "Management", "Education", "Sports", "Wev-development"]
+
+industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
+
+puts 'Finished creating Industries'
+
+puts 'Have fun!'
 
