@@ -5,14 +5,14 @@
 
   <div class=" container">
     <div class="row">
-      <%= link_to mentor_path(@mentor) do  %>
+      <%= link_to after_sign_up_path(@mentor) do  %>
         <div class="col-8 offset-2 card card-mentor-big">
           <div class="row">
             <div class="mentor-avatar-big col-3 align-self-center">
               <img class="avatar-large" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
             </div>
             <div class="mentor-info col-7 text-left p-3">
-                <h2><%= @mentor.first_name %><%= @mentor.last_name %></h2>
+                <h2><%= @mentor.first_name %> <%= @mentor.last_name %></h2>
                 <h3>Web Developer</h3>
                 <p>CTO</p>
                 <p><%= @mentor.about %></p>
@@ -31,7 +31,7 @@
   <h1>Other suggestions</h1>
 </div>
 <% @mentors.each do |mentor| %>
-  <%= link_to mentor_path(mentor) do  %>
+  <%= link_to after_sign_up_path(mentor) do  %>
     <div class="container-sm-mentor">
       <div class="row">
         <div class="col-6 offset-3 card">
@@ -44,7 +44,7 @@
               <% end %>
             </div>
             <div class="mentor-info p-3 col-7">
-              <h2><%= mentor.first_name %><%= mentor.last_name %></h2>
+              <h2><%= mentor.first_name %> <%= mentor.last_name %></h2>
               <h3>Web Development</h3>
               <p>CTO</p>
               <p><%= mentor.about.truncate(40) %></p>
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
