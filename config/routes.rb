@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get 'draft', to: 'pages#draft'
   get 'draft2', to: 'pages#draft2'
 
-  # Users = after_sign_up routes
-  resources :after_sign_up, only: [:new, :update]
+
+  resources :after_sign_up, only: [:index, :new, :update]
+
   resources :meetings, only: [:index]
 
   # Dashboard route
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   # Advice Preference routes
   # resources :advice_preferences, only: [:new, :create]
 
-  resources :after_sign_up do
+  resources :after_sign_up, only: [:show] do
     resources :advice_preferences, only: [ :new, :create ]
   end
 
