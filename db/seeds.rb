@@ -81,14 +81,6 @@ end
 puts 'Finished creating users'
 
 
-puts "Destroying industries"
-Industry.destroy_all
-
-puts "Creating Industries"
-industry_array = ["Health Care", "Industrial Design", "Financials", "Utilities", "Telecommunications", "Financials", "Health Care", "Oil & Gas", "Wev-devlopment"];
-
-puts 'Finished creating Industries'
-
 
 
 
