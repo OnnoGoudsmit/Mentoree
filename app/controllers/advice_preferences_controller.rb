@@ -6,5 +6,9 @@ class AdvicePreferencesController < ApplicationController
     @advice_preference = AdvicePreference.new
   end
 
+  def create
+    raise
+  end
+
 end
 
