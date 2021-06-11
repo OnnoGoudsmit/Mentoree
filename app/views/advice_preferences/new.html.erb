@@ -8,7 +8,7 @@
 
       <%#= f.input :radio, as: :select, include_blank: false, collection: ['Yes','No'] %>
       <%= f.association :industry %>
-      <%= f.input :subject, collection: AdvicePreference::SUBJECTS %>
+      <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS %>
 
       <div class="form-actions">
         <%= f.button :submit, "Submit", class: "btn btn-flat" %>
