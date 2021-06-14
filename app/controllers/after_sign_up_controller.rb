@@ -9,9 +9,14 @@ class AfterSignUpController < ApplicationController
   end
 
   def show
-    @user = User.new
-    @slots = @user.get_slots
-    raise
+    # current user is the mentoree booking with a mentor
+    @mentoree = current_user
+    # Mentor is the one who'se profile you are checking
+    @mentor = User.find(params[:id])
+    # # Checking slots of mentor
+    @slots = @mentor.get_slots
+    # # raise
+    @meeting = Meeting.new(mentoree_id: @mentoree)
     skip_authorization
   end
 
