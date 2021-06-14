@@ -29,6 +29,72 @@ user_bob.save!
 
 puts 'Finished creating Bob'
 
+# puts 'Creating Mentors'
+
+# mentor1 = User.new(
+#   first_name: "Katherine",
+#   last_name: "Mills",
+#   age: rand(40..60),
+#   city: "Wagenaarstraat 307, 1093CN Amsterdam",
+#   phone_number: 305 0001 5678,
+#   about: "Deep expertise and hands on experience with Web Applications and programming languages such as HTML, CSS, JavaScript, JQuery and API’s.",
+#   email: "kathmills@email.com",
+# )
+
+# file = URI.open('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80')
+# mentor1.photo.attach(io: file, filename: 'mentor-1.png', content_type: 'image/png')
+
+# mentor1.save!
+
+# mentor2 = User.new(
+#   first_name: "Trevor",
+#   last_name: "Burgess",
+#   age: rand(40..60),
+#   city: "Spaklerweg 38, 1096BA Amsterdam",
+#   phone_number: 305 3401 6678,
+#   about: "Responsible for designing, coding and modifying websites, from layout to function and according to a client’s specifications.",
+#   email: "trevor@email.com",
+# )
+
+# file = URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80')
+# mentor2.photo.attach(io: file, filename: 'mentor-2.png', content_type: 'image/png')
+
+# mentor2.save!
+
+# mentor3 = User.new(
+#   first_name: "Irene",
+#   last_name: "Michelle",
+#   age: rand(40..60),
+#   city: "Langerstraat 21, 1015AK Amsterdam",
+#   phone_number: 335 5501 5278,
+#   about: "Security Principles, Object-Oriented Design, Web Services (REST/SOAP), Multimedia Content Development, API’s",
+#   email: "iremichel@email.com",
+# )
+
+# file = URI.open('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2734&q=80')
+# mentor3.photo.attach(io: file, filename: 'mentor-3.png', content_type: 'image/png')
+
+# mentor3.save!
+
+# mentor4 = User.new(
+#   first_name: "Jack",
+#   last_name: "Duncan",
+#   age: rand(40..60),
+#   city: "Buitenveldertselaan 184, 1081AC Amsterdam",
+#   phone_number: 616 2231 4528,
+#   about: "Secures web system by developing system access, monitoring, control and evaluation; establishing and testing disaster recovery policies and procedures; completing back-ups;and maintaining documentation.",
+#   email: "jduncan@email.com",
+# )
+
+# file = URI.open('https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3009&q=80')
+# mentor4.photo.attach(io: file, filename: 'mentor-4.png', content_type: 'image/png')
+
+# mentor4.save!
+
+
+# puts 'Finished creating Mentors'
+
+
 puts 'Creating users'
 
 # images = %w(allef-vinicius-C_1jjFJioWg-unsplash.jpeg
@@ -64,13 +130,20 @@ puts 'Creating users'
     about: Faker::Quote.matz,
     email: Faker::Internet.email,
     password: Faker::Internet.password
+
   )
+  user.users_industry.create(industry: Industry.sample, work_experience: "Skilled" )
   user.save!
+
+
 end
 
   puts "Creating user with picture number #{counter}"
 
-user_one = User.first.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-first.png", content_type: 'image/png')
+
+
+user_one = User.first
+user_one.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_one,
@@ -79,7 +152,8 @@ user_one = User.first.photo.attach(io: URI.open("https://source.unsplash.com/800
 end
 # user_one.update!
 
-user_two = User.second.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
+user_two = User.second
+user_two.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_two,
@@ -88,7 +162,8 @@ user_two = User.second.photo.attach(io: URI.open("https://source.unsplash.com/80
 end
 # user_two.update!
 
-user_three = User.third.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
+user_three = User.third
+user_three.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_three,
@@ -97,7 +172,8 @@ user_three = User.third.photo.attach(io: URI.open("https://source.unsplash.com/8
 end
 # user_three.update!
 
-user_four = User.fourth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
+user_four = User.fourth
+user_four.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_four,
@@ -106,7 +182,8 @@ user_four = User.fourth.photo.attach(io: URI.open("https://source.unsplash.com/8
 end
 # user_four.update!
 
-user_five = User.fifth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
+user_five = User.fifth
+user_five.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_five,

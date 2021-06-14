@@ -13,7 +13,7 @@
             </div>
             <div class="mentor-info col-7 text-left p-3">
                 <h2><%= @mentor.first_name %> <%= @mentor.last_name %></h2>
-                <h3>Web Developer</h3>
+                <h3> <%= @mentor.users_industry.industry.name  %> </h3>
                 <p>CTO</p>
                 <p><%= @mentor.about %></p>
             </div>
@@ -33,7 +33,7 @@
 <% @mentors.each do |mentor| %>
   <%= link_to after_sign_up_path(mentor) do  %>
     <div class="container-sm-mentor">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-6 offset-3 card">
           <div class="row">
             <div class="mentor-avatar-big col-3 align-self-center">
@@ -45,11 +45,11 @@
             </div>
             <div class="mentor-info p-3 col-7">
               <h2><%= mentor.first_name %> <%= mentor.last_name %></h2>
-              <h3>Web Development</h3>
-              <p>CTO</p>
+              <h3> <%= mentor.users_industry.industry.name %></h3>
+              <p> <%= mentor.users_industry.work_experience %> </p>
               <p><%= mentor.about.truncate(40) %></p>
             </div>
-            <div class="stats-mentor p-3 col-2">
+            <div class="stats-mentor p-3 col-2"> d
               <h4>24 <i class="fas fa-eye"></i></h4>
               <h4>18 <i class="far fa-thumbs-up"></i></h4>
             </div>
