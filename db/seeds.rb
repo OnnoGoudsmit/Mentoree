@@ -1,17 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 require 'faker'
 require "open-uri"
 
+def handle_string_io_as_file(io)
+  return io unless io.class == StringIO
+  file = Tempfile.new(["temp",".png"], encoding: 'ascii-8bit')
+  file.binmode
+  file.write io.read
+  file.open
+end
+
+Industry.destroy_all
+
+puts 'Creating Industries'
+
+industries_array = ["Health Care", "Industrial Design", "Financing", "Engineering", "Hospitality", "Management", "Education", "Sports", "Wev-development"]
+
+industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
+
+puts 'Finished creating Industries'
+
 puts "Destroying users"
 User.destroy_all
-
-
 puts 'Creating Bob'
 
 user_bob = User.new(
@@ -24,35 +34,15 @@ user_bob = User.new(
     email: "bob@email.com",
     password: "123456"
   )
-
+UserIndustry.create(industry: Industry.all.sample, user: user_bob, work_experience: "Skilled" )
 user_bob.save!
 
 puts 'Finished creating Bob'
 
+
 puts 'Creating users'
 
-# images = %w(allef-vinicius-C_1jjFJioWg-unsplash.jpeg
-# allison-griffith-Q76DPRQ3Ix0-unsplash.jpeg
-# austin-wade-X6Uj51n5CE8-unsplash.jpeg
-# charles-etoroma-95UF6LXe-Lo-unsplash.jpeg
-# christian-buehner-DItYlc26zVI-unsplash.jpeg
-# christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpeg
-# courtney-cook-TSZo17r3m0s-unsplash.jpeg
-# dahiana-waszaj-XQWfro4LrVs-unsplash.jpeg
-# dahiana-waszaj-Xbe20Z_DlDs-unsplash.jpeg
-# ethan-haddox-NTjSR3zYpsY-unsplash.jpeg
-# gregory-hayes-SCbycmUSAaE-unsplash.jpeg
-# harps-joseph-tAvpDE7fXgY-unsplash.jpeg
-# jack-finnigan-rriAI0nhcbc-unsplash.jpeg
-# jonas-kakaroto-KIPqvvTOC1s-unsplash.jpeg
-# matheus-ferrero-W7b3eDUb_2I-unsplash.jpeg
-# michael-dam-mEZ3PoFGs_k-unsplash.jpeg
-# michael-mims-fWWiaDox0BU-unsplash.jpeg
-# roland-samuel-MZ5A24H1JqU-unsplash.jpeg
-# shipman-northcutt-sgZX15Da8YE-unsplash.jpeg
-# wes-hicks-4-EeTnaC1S4-unsplash.jpeg)
-
-  counter = 0
+counter = 0
 
 5.times do | index |
   user = User.new(
@@ -66,70 +56,62 @@ puts 'Creating users'
     password: Faker::Internet.password
   )
   user.save!
+  UserIndustry.create(industry: Industry.all.sample, user: user, work_experience: "Skilled" )
 end
 
-  puts "Creating user with picture number #{counter}"
-
-user_one = User.first.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-first.png", content_type: 'image/png')
+user_one = User.first
+# img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
+# user_one.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_one,
+    mentor_id: user_one.id,
     slot: Date.today+rand(10000)
     )
 end
-# user_one.update!
+user_one_industry = UserIndustry.create(user_id: user_one.id, industry_id: Industry.all.sample)
 
-user_two = User.second.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
+puts "Creating 3 availabilities for user 2"
+
+user_two = User.second
+# user_two.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_two,
+    mentor_id: user_two.id,
     slot: Date.today+rand(10000)
     )
 end
-# user_two.update!
 
-user_three = User.third.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
+puts "Creating 3 availabilities for user 3"
+
+user_three = User.third
+# user_three.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_three,
+    mentor_id: user_three.id,
     slot: Date.today+rand(10000)
     )
 end
-# user_three.update!
 
-user_four = User.fourth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
+puts "Creating 3 availabilities for user 4"
+
+user_four = User.fourth
+# user_four.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_four,
+    mentor_id: user_four.id,
     slot: Date.today+rand(10000)
     )
 end
-# user_four.update!
 
-user_five = User.fifth.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
+puts "Creating 3 availabilities for user 5"
+
+user_five = User.fifth
+# user_five.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_five,
+    mentor_id: user_five.id,
     slot: Date.today+rand(10000)
     )
 end
-# user_five.update!
 
-
-
-puts 'Finished creating users'
-
-puts "Destroying industries"
-
-Industry.destroy_all
-
-puts 'Creating Industries'
-
-industries_array = ["Health Care", "Industrial Design", "Financing", "Engineering", "Hospitality", "Management", "Education", "Sports", "Wev-development"]
-
-industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
-
-puts 'Finished creating Industries'
-
-puts 'Have fun!'
-
+puts "Finishing seeding"
