@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   get 'draft', to: 'pages#draft'
   get 'draft2', to: 'pages#draft2'
 
+  resources :after_sign_up, only: [:index, :new, :update]
+
   resources :after_sign_up, only: [:show] do
     resources :advice_preferences, only: [ :new, :create ]
     resources :user_industries, only: [ :new, :create ]
   end
 
-  resources :after_sign_up, only: [:index, :new, :update]
 
   resources :meetings, only: [:index]
 
