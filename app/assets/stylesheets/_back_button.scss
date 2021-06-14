@@ -1,0 +1,8 @@
+.back-button {
+  display: flex;
+  justify-self: left;
+  &:hover {
+    color: $m-dark-grey;
+  }
+}
+
