@@ -141,14 +141,14 @@ puts 'Creating users'
 
   )
   user.save!
-  UsersIndustry.create(industry: Industry.all.sample, user: user, work_experience: "Skilled" )
+  UserIndustry.create(industry: Industry.all.sample, user: user, work_experience: "Skilled" )
 
 
 end
 
   puts "Creating user with picture number #{counter}"
 
-
+   puts "Creating 3 availabilities for user 1"
 
 user_one = User.first
 # img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
@@ -161,6 +161,8 @@ user_one = User.first
 end
 # user_one.update!
 
+puts "Creating 3 availabilities for user 2"
+
 user_two = User.second
 # user_two.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
 3.times do |index|
@@ -170,6 +172,8 @@ user_two = User.second
     )
 end
 # user_two.update!
+
+puts "Creating 3 availabilities for user 3"
 
 user_three = User.third
 # user_three.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
@@ -181,6 +185,8 @@ user_three = User.third
 end
 # user_three.update!
 
+puts "Creating 3 availabilities for user 4"
+
 user_four = User.fourth
 # user_four.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
 3.times do |index|
@@ -190,6 +196,8 @@ user_four = User.fourth
     )
 end
 # user_four.update!
+
+puts "Creating 3 availabilities for user 5"
 
 user_five = User.fifth
 # user_five.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
