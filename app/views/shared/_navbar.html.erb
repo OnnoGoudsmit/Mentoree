@@ -29,10 +29,10 @@
 
       <% if user_signed_in?  %>
 
-        <li class="nav-item dropdown">
-          <%#= current_user.photo.key %>
+        <li class="nav-item dropdown d-flex align-items-center">
+
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <p class="avatar-name pr-2 pt-3"> <strong><%= current_user.first_name %></strong> </p><br>  <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png", class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end  %>

@@ -25,7 +25,7 @@
             <p>Edit your password:</p>
             <%= f.input :current_password,
                         hint: "we need your current password to confirm your changes",
-                        required: true,
+                        required: true
                         input_html: { autocomplete: "current-password" }, label: false, placeholder: 'Current password' %>
             <%= f.input :password,
                         hint: "leave it blank if you don't want to change it",
@@ -38,9 +38,9 @@
 
             <p>Upload a picture of you.</p>
 
-            <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'btn-upload-photo'}, label: 'Upload a photo' %>
+            <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'btn-upload-photo'}, label: 'Upload a photo' %>
 
-            <%= image_tag "", width: 200, input_html: { class: 'hidden', id: "photo-preview" } %>
+            <%= image_tag "", width: 100, class: 'd-none', id: "photo-preview" %>
 
           </div>
           <div class="form-actions">
