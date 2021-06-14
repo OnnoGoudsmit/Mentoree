@@ -10,7 +10,7 @@ class AfterSignUpController < ApplicationController
 
   def show
     @user = User.new
-
+    @availabilities = User.availabilities
     skip_authorization
   end
 

@@ -27,6 +27,13 @@
           <button class="btn btn-ghost">Thu 10 Jun - 18:30</button>
           <button class="btn btn-ghost">Thu 10 Jun - 19:30</button>
           <button class="btn btn-ghost">Sat 12 Jun - 18:30</button>
+          <%= f.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: @availabilities %>
           <button class="btn btn-flat">Choose mentor</button>
         </div>
       </div>
