@@ -22,6 +22,6 @@
 }
 
 .tag-selector:checked + label {
-  background-color: $m-purple;
-  color: white;
+  background-color: $m-light-purple;
+  color: $m-purple;
 }
