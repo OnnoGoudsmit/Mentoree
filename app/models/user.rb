@@ -8,9 +8,12 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :advice_preferences
+  has_many :advice_preferences, dependent: :destroy
   has_many :industries, through: :advice_preferences
   has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
+
+  has_one :user_industry, dependent: :destroy
+  has_one :industry_experience, through: :user_industries, source: :industry
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -48,3 +51,4 @@ class User < ApplicationRecord
     self.availabilities.where('slot > ?', DateTime.now).limit(3)
   end
 end
+
