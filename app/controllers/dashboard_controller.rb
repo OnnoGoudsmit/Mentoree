@@ -4,4 +4,3 @@ class DashboardController < ApplicationController
     authorize :dashboard
   end
 end
-

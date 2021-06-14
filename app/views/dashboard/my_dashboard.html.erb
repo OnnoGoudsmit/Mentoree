@@ -3,6 +3,9 @@
 <div class="row">
   <!-- Use offset to create empty columns on the side -->
   <div class="col-8 offset-2 card card-dashboard">
+
+    <p class="time" style="text-align: right; font-size: 12px;"><%= Time.now %></p>
+
     <div class="row">
       <!-- Create as many divs as you want, as long as col adds up to 12 -->
       <div class="col-12">
@@ -11,23 +14,37 @@
 
         <div class="dashboard-content">
         <p><%#= test_helper_method(current_user) %></p>
-        <p>Welcome <%= @user.first_name.capitalize %></p>
+        <h4>Welcome <%= @user.first_name.capitalize %></h4>
         </div>
 
-        <div class="dashboard-button">
-          <%= link_to "complete profile", new_after_sign_up_path, class: "btn btn-ghost" %>
-          <%#= link_to "Fill adivce preference", root_path, class: "btn btn-ghost" %>
-          <%#= link_to "Prepare meeting", root_path, class: "btn btn-ghost" %>
-          <%#= link_to "Find mentor", root_path, class: "btn btn-ghost" %>
+        <%#= link_to "Prepare meeting", root_path, class: "btn btn-ghost" <---- WHEN USER SELECTED SLOT THEN PREPARE MEETING%>
+
+        <% if current_user.user_to_complete_profile && user_to_complete_advice_preference && user_to_complete_user_indsutries %>
+
+          <div><br>
+            <%= link_to 'Find mentor',after_sign_up_index_path, class: "btn btn-flat" %>
+          </div>
+
+        <%elsif current_user.user_to_complete_profile == false %>
+
+          <div class="dashboard-button">
+            <%= link_to "complete profile", new_after_sign_up_path, class: "btn btn-ghost" %>
+
+          </div>
+
+        <%elsif user_to_complete_advice_preference == false %>
+
+          <div>
+            <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(current_user), class: "btn btn-ghost" %>
+          </div>
+
+        <% else %>
+
+        <div>
+          <%= link_to 'Advice preferences', new_after_sign_up_user_industry_path(current_user), class: "btn btn-ghost" %>
         </div>
 
-        <div><br>
-          <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(current_user), class: "btn btn-ghost" %>
-        </div>
-
-        <div><br>
-          <%= link_to 'Find mentor',after_sign_up_index_path, class: "btn btn-flat" %>
-        </div>
+        <% end  %>
 
       </div>
     </div>
