@@ -12,8 +12,8 @@ class User < ApplicationRecord
   has_many :industries, through: :advice_preferences
   has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
 
-  has_one :users_industry, dependent: :destroy
-  has_one :industry_experience, through: :users_industry, source: :industry
+  has_one :user_industry, dependent: :destroy
+  has_one :industry_experience, through: :user_industries, source: :industry
 
   validates :first_name, presence: true
   validates :last_name, presence: true
