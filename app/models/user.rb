@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :industries, through: :advice_preferences
   has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
 
-  has_one :users_industry
+  has_one :users_industry, dependent: :destroy
   has_one :industry_experience, through: :users_industry, source: :industry
 
   validates :first_name, presence: true

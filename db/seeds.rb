@@ -8,6 +8,14 @@
 require 'faker'
 require "open-uri"
 
+def handle_string_io_as_file(io)
+  return io unless io.class == StringIO
+  file = Tempfile.new(["temp",".png"], encoding: 'ascii-8bit')
+  file.binmode
+  file.write io.read
+  file.open
+end
+
 puts "Destroying users"
 User.destroy_all
 
@@ -132,8 +140,8 @@ puts 'Creating users'
     password: Faker::Internet.password
 
   )
-  user.users_industry.create(industry: Industry.sample, work_experience: "Skilled" )
   user.save!
+  UsersIndustry.create(industry: Industry.all.sample, user: user, work_experience: "Skilled" )
 
 
 end
@@ -143,7 +151,8 @@ end
 
 
 user_one = User.first
-user_one.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-first.png", content_type: 'image/png')
+img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
+user_one.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: user_one,
