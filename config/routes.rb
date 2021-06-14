@@ -22,5 +22,4 @@ Rails.application.routes.draw do
   # Advice Preference routes
   # resources :advice_preferences, only: [:new, :create]
 
-
 end
