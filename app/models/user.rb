@@ -23,15 +23,25 @@ class User < ApplicationRecord
   # add the rest of the validation once the first form is done.
 
   def user_to_complete_profile
-    # if self.city.first_name.etc? return true
-    # or if self.attributes => gives back a has with key as attribute and value as nil or value
-
-    # def check_for_existence
-    #   self.attributes.each do |attr|
-    #     return false if self[attr].nil?
-    #   end
-    # end
+    # if self.city.first_name.etc? returns true if city is present
+    # if self.attributes # => gives back a hash with key as attribute and value as nil or value
+    self.attributes.each do |attr|
+      return false if self[attr].nil?
+    end
   end
+
+  def user_to_complete_advice_preference
+    self.advice_preferences.attributes.each do |attr|
+      return false if self[attr].nil?
+    end
+  end
+
+  def user_to_complete_user_indsutries
+    self.user_industries.attributes.each do |attr|
+      return false if self[attr].nil?
+    end
+  end
+
   scope :mentors, -> { where("availabilities_count > 0") }
 
   def get_slots

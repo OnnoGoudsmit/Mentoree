@@ -30,8 +30,9 @@
       <% if user_signed_in?  %>
 
         <li class="nav-item dropdown">
-          <% if current_user.photo.present? %>
-            <%= image_tag cloudinary_url(current_user.photo), class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%#= current_user.photo.key %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png", class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end  %>

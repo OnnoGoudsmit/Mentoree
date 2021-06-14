@@ -26,3 +26,13 @@
   background: $m-dark-purple;
   color: white;
 }
+
+.btn-upload-photo {
+  border: 1px solid $m-dark-purple;
+  color: $m-dark-purple;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  background: white;
+  border-radius: 30px;
+}

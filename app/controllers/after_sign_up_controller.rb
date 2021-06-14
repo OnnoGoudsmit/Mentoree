@@ -33,7 +33,7 @@ class AfterSignUpController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :age, :phone_number, :city, :about)
+    params.require(:user).permit(:first_name, :last_name, :age, :phone_number, :city, :about, :photo)
   end
 end
 

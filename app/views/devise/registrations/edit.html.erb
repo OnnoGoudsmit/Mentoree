@@ -35,13 +35,13 @@
                         required: false,
                         input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm new password' %>
             <br>
+
             <p>Upload a picture of you.</p>
-            <label class="btn btn-ghost">
-              Select file
-              <span style="display:none;">
-                <%= f.file_field as: :photo, required: true, name: 'user_avatar' %>
-              </span>
-            </label>
+
+            <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'btn-upload-photo'}, label: 'Upload a photo' %>
+
+            <%= image_tag "", width: 200, input_html: { class: 'hidden', id: "photo-preview" } %>
+
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Update", class: "btn btn-flat" %>

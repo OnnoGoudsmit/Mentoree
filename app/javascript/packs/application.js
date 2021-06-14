@@ -31,4 +31,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  previewImageOnFileSelect();
 });
+
+
+// import previewImageOnFileSelect from './components/photo_preview';
