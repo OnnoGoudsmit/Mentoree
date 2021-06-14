@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :advice_preferences
+  has_many :advice_preferences, dependent: :destroy
   has_many :industries, through: :advice_preferences
   has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
 
