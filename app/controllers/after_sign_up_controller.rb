@@ -10,7 +10,8 @@ class AfterSignUpController < ApplicationController
 
   def show
     @user = User.new
-
+    @slots = @user.get_slots
+    raise
     skip_authorization
   end
 

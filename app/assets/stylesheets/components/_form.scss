@@ -1,3 +1,14 @@
+.container-form {
+  text-align: center;
+  .form-text {
+    text-align: left;
+    margin-left: 10px;
+  }
+}
+
+
+
+
 .form-single-text {
   padding: 5px;
   margin: 10px;
@@ -29,13 +40,13 @@
   background-color: $m-grey-blue;
 }
 
-.card-advice-preference {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  h2 {
-    align-text: center;
-  }
-}
+// .card-advice-preference {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   h2, p {
+//     text-align: center;
+//   }
+// }
 
 

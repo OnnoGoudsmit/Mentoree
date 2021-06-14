@@ -6,10 +6,10 @@
           <img class="avatar-large" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
         </div>
         <div class="mentor-info col-7 text-left p-3">
-          <h2><%=@mentor&.first_name %> <%= @mentor&.last_name %></h2>
+          <h2><%=@user&.first_name %> <%= @user&.last_name %></h2>
           <h3>Industry</h3>
           <p>Job role</p>
-          <p><%= @mentor&.about %></p>
+          <p><%= @user&.about %></p>
           <ul>
             <li><strong>Industry</strong> - experience</li>
             <li><strong>Industry</strong> - experience</li>
@@ -27,6 +27,13 @@
           <button class="btn btn-ghost">Thu 10 Jun - 18:30</button>
           <button class="btn btn-ghost">Thu 10 Jun - 19:30</button>
           <button class="btn btn-ghost">Sat 12 Jun - 18:30</button>
+          <%= f.input :slot,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: @slots %>
           <button class="btn btn-flat">Choose mentor</button>
         </div>
       </div>
