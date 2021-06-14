@@ -37,5 +37,4 @@ class User < ApplicationRecord
   end
   scope :mentors, -> { where("availabilities_count > 0") }
 
-
 end

@@ -151,51 +151,51 @@ end
 
 
 user_one = User.first
-img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
-user_one.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
+# img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
+# user_one.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_one,
+    mentor_id: user_one.id,
     slot: Date.today+rand(10000)
     )
 end
 # user_one.update!
 
 user_two = User.second
-user_two.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
+# user_two.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_two,
+    mentor_id: user_two.id,
     slot: Date.today+rand(10000)
     )
 end
 # user_two.update!
 
 user_three = User.third
-user_three.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
+# user_three.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_three,
+    mentor_id: user_three.id,
     slot: Date.today+rand(10000)
     )
 end
 # user_three.update!
 
 user_four = User.fourth
-user_four.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
+# user_four.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_four,
+    mentor_id: user_four.id,
     slot: Date.today+rand(10000)
     )
 end
 # user_four.update!
 
 user_five = User.fifth
-user_five.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
+# user_five.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-five.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
-    mentor_id: user_five,
+    mentor_id: user_five.id,
     slot: Date.today+rand(10000)
     )
 end

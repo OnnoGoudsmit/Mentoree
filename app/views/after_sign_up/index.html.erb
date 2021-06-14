@@ -13,7 +13,7 @@
             </div>
             <div class="mentor-info col-7 text-left p-3">
                 <h2><%= @mentor.first_name %> <%= @mentor.last_name %></h2>
-                <h3> <%= @mentor.users_industry.industry.name  %> </h3>
+                <h3> <%= @mentor.industry_experience&.name  %> </h3>
                 <p>CTO</p>
                 <p><%= @mentor.about %></p>
             </div>
@@ -45,8 +45,8 @@
             </div>
             <div class="mentor-info p-3 col-7">
               <h2><%= mentor.first_name %> <%= mentor.last_name %></h2>
-              <h3> <%= mentor.users_industry.industry.name %></h3>
-              <p> <%= mentor.users_industry.work_experience %> </p>
+              <h3> <%= mentor.industry_experience&.name %></h3>
+              <p> <%= mentor.users_industry&.work_experience %> </p>
               <p><%= mentor.about.truncate(40) %></p>
             </div>
             <div class="stats-mentor p-3 col-2"> d
