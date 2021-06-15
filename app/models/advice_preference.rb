@@ -1,5 +1,5 @@
 class AdvicePreference < ApplicationRecord
-  belongs_to :industry, dependent: :destroy
+  belongs_to :industry
   belongs_to :user
 
   SUBJECTS = {
