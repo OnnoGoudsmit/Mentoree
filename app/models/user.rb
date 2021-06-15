@@ -48,7 +48,7 @@ class User < ApplicationRecord
   scope :mentors, -> { where("availabilities_count > 0") }
 
   def get_slots
-    self.availabilities.where('slot > ?', DateTime.now).limit(3)
+    self.availabilities.where('slot > ?', DateTime.now).limit(3).order(:slot)
   end
 end
 

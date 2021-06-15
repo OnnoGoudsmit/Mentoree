@@ -11,5 +11,4 @@ module ApplicationHelper
   def user_to_complete_advice(user)
 
   end
-
 end

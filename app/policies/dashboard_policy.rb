@@ -8,5 +8,4 @@ class DashboardPolicy < ApplicationPolicy
   def my_dashboard?
     true if user
   end
-
 end
