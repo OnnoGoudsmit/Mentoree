@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8 offset-2 card p-3">
       <div class="user_industries_form">
-        <%= link_to "back", root_path, class: "back-button" %>
+        <%= link_to "back", my_dashboard_path, class: "back-button" %>
 
         <h2>Experience</h2>
         <br>
@@ -10,7 +10,7 @@
 
         <%= simple_form_for [ @user, @user_industry ], url: after_sign_up_user_industries_path(@user) do |f| %>
 
-          <div class="form-inputs">
+          <div class="form-inputs col-10 offset-1 p-4">
             <%= f.association :industry, label: false, prompt: 'Industry' %>
 
             <p>Tell us about your previous work experiences.</p>
@@ -21,7 +21,7 @@
           <div class="form-actions">
             <%= f.button :submit, "Next", class: "btn btn-flat" %>
           </div>
-
+          <br>
         <% end %>
       </div>
    </div>

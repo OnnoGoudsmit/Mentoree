@@ -5,23 +5,23 @@
       <div class="card-advice-preference">
         <%= link_to "back", root_path, class: "back-button" %>
 
-        <h2>Meeting topic</h2>
+        <h2>Meeting topics</h2>
         <br>
         <p>Select an indsutry you would like to know more about.</p>
 
         <%= simple_form_for [ @user, @advice_preference ], url: after_sign_up_advice_preferences_path(@user) do |f| %>
-          <div class="form-inputs">
+          <div class="form-inputs col-10 offset-1 p-4">
             <%= f.association :industry, label: false, prompt: 'Industry' %>
-            <br>
+          </div>
             <p>Selec the topics you would like to talk about.</p>
             <br>
 
             <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item', legend_tag: false  %>
-          </div>
           <br>
           <div class="form-actions">
             <%= f.button :submit, "Submit", class: "btn btn-flat" %>
           </div>
+          <br>
 
         <% end %>
       </div>
