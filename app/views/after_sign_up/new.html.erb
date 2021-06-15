@@ -1,21 +1,31 @@
 <div class="container-form">
 
   <div class="row">
-    <div class="col-8 offset-2 card p-3">
+    <div class="col-6 offset-3 card p-3">
+      <%= link_to "back", my_dashboard_path, class: "back-button" %>
 
-      <h2>Complete Profile</h2>
+      <br><h2>Complete Profile</h2>
       <p>Tell the mentors more about you.</p>
 
       <%= simple_form_for current_user, url: after_sign_up_path(current_user) do |f| %>
+
+        <div class="form-inputs col-10 offset-1 p-4">
           <%= f.input :first_name %>
           <%= f.input :last_name %>
           <%= f.input :age %>
           <%= f.input :phone_number %>
           <%= f.input :city %>
-          <%= f.input :about %>
-          <%= f.input :photo, as: :file %>
-        <%= f.submit :Accept, class: "btn btn-flat" %>
+          <%= f.input :about, placeholder: 'Write a short description of who you are',
+            hint: "25 characters minimum" %>
 
+          <p>Upload a picture of you.</p>
+
+            <%= f.input :photo, input_html: { class: 'd-none', id: 'photo-input' }, label_html: { class: 'btn-upload-photo'}, label: 'Upload a photo' %>
+
+            <%= image_tag "", width: 100, class: 'd-none', id: "photo-preview" %>
+        </div>
+
+        <%= f.submit :Accept, class: "btn btn-flat" %>
       <% end %>
 
     </div>
