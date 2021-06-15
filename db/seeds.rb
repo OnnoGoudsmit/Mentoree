@@ -117,12 +117,12 @@ puts 'Finished creating Mentor4'
 puts "Creating 3 availabilities for Mentor 1"
 
 mentor1 = User.first
-img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
-mentor1.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
+img_user = URI.open("https://futhead.cursecdn.com/static/img/14/players/156443.png")
+mentor1.photo.attach(io: img_user, filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: mentor1.id,
-    slot: Date.today+rand(10000)
+    slot: Date.today+rand(40)
     )
 end
 # user_one_industry = UserIndustry.create(user_id: mentor1.id, industry_id: Industry.all.sample)
@@ -130,33 +130,33 @@ end
 puts "Creating 3 availabilities for Mentor 2"
 
 mentor2 = User.second
-mentor2.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-two.png", content_type: 'image/png')
+mentor2.photo.attach(io: URI.open("https://i.pinimg.com/originals/56/97/bd/5697bdff5e13e03891633939c7030e2a.png"), filename: "images-two.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: mentor2.id,
-    slot: Date.today+rand(10000)
+    slot: Date.today+rand(40)
     )
 end
 
 puts "Creating 3 availabilities for Mentor 3"
 
 mentor3 = User.third
-mentor3.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-three.png", content_type: 'image/png')
+mentor3.photo.attach(io: URI.open("https://purepng.com/public/uploads/large/purepng.com-manmanadult-malemale-childboy-beingmens-1421526920869cscbo.png"), filename: "images-three.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: mentor3.id,
-    slot: Date.today+rand(10000)
+    slot: Date.today+rand(40)
     )
 end
 
 puts "Creating 3 availabilities for Mentor 4"
 
 mentor4 = User.fourth
-mentor4.photo.attach(io: URI.open("https://source.unsplash.com/800x450/?portrait"), filename: "images-four.png", content_type: 'image/png')
+mentor4.photo.attach(io: URI.open("https://generated.photos/vue-static/home/feed/asian-girl.png"), filename: "images-four.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: mentor4.id,
-    slot: Date.today+rand(10000)
+    slot: Date.today+rand(40)
     )
 end
 

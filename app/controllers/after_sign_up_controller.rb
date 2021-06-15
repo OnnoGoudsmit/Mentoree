@@ -2,7 +2,7 @@ class AfterSignUpController < ApplicationController
 
   def index
     # @users = User.all
-    @mentors = User.mentors.first(3)
+    @mentors = User.mentors.last(3)
     @mentor =  User.mentors.first
     # @user.where(user.availability )
     skip_policy_scope

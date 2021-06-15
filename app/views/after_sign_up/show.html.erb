@@ -3,17 +3,19 @@
       <h2 class="text-center">Mentor profile</h2>
       <div class="row profile-info">
         <div class="mentor-avatar-big col-3 align-self-center">
-          <img class="avatar-large" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
-        </div>
+              <% if @mentor.photo.attached? %>
+                <%= cl_image_tag @mentor.photo.key, class: 'avatar-medium', crop: :fill %>
+              <% else %>
+                <img class="avatar-medium" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
+              <% end %>
+            </div>
         <div class="mentor-info col-7 text-left p-3">
           <h2><%=@mentor&.first_name %> <%= @mentor&.last_name %></h2>
-          <h3>Industry</h3>
-          <p>Job role</p>
+          <h3><%= @mentor.user_industry.industry.name %></h3>
+          <p>Senior Developer</p>
           <p><%= @mentor&.about %></p>
           <ul>
-            <li><strong>Industry</strong> - experience</li>
-            <li><strong>Industry</strong> - experience</li>
-            <li><strong>Industry</strong> - experience</li>
+            <li><strong>#</strong></li>
           </ul>
         </div>
         <div class="stats-mentor p-3 col-2">
