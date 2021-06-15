@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :meetings, only: [:index]
+  resources :meetings, only: [:index, :create]
 
   # Dashboard route
   get 'my_dashboard', to: 'dashboard#my_dashboard'
