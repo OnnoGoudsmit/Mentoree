@@ -8,8 +8,4 @@ class DashboardPolicy < ApplicationPolicy
   def my_dashboard?
     true if user
   end
-
-  def create
-    true if current_user
-  end
 end

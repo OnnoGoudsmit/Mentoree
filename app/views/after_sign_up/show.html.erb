@@ -22,18 +22,17 @@
         </div>
       </div>
       <div class="date-selection container-form pt-3">
-        <h3 class="text-center">Pick a meeting date and time</h3>
-        <%= simple_form_for [ @mentor, @meeting ], url: my_dashboard_path do |f| %>
-          <%= f.input :availability,
+        <h3 class="text-center pb-2">Pick a meeting date and time</h3>
+        <%= simple_form_for @meeting do |f| %>
+          <%= f.input :availability_id,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
             collection: @slots,
-            # as: :string, :input_html =>{:value => @slots.each { |av| av.slot.strftime("%a %d %b %n %R") },class: 'category-selector'},
-
-            label_method: :slot %>
+            label_method: :format_time,
+            legend_tag: false %>
           <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
         <% end %>
       </div>

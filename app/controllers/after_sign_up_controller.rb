@@ -20,16 +20,6 @@ class AfterSignUpController < ApplicationController
     skip_authorization
   end
 
-  def create
-    @meeting = Meeting.new(meeting_params)
-    authorize @meeting
-    if @meeting.save
-      redirect_to my_dashboard_path
-    else
-      render :new
-    end
-  end
-
   def new
     skip_authorization
   end
