@@ -14,7 +14,7 @@ Industry.destroy_all
 
 puts 'Creating Industries'
 
-industries_array = ["Health Care", "Industrial Design", "Financing", "Engineering", "Hospitality", "Management", "Education", "Sports", "Wev-development"]
+industries_array = ["Wev-development", "Health Care", "Industrial Design", "Finance", "Engineering", "Hospitality", "Management", "Education", "Sports"]
 
 industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
 
@@ -34,13 +34,80 @@ user_bob = User.new(
     email: "bob@email.com",
     password: "123456"
   )
-UserIndustry.create(industry: Industry.all.sample, user: user_bob, work_experience: "Skilled" )
+UserIndustry.create(industry: Industry.first, user: user_bob, work_experience: "Skilled" )
 user_bob.save!
 
 puts 'Finished creating Bob'
 
 
-puts 'Creating users'
+puts 'Creating Mentor1'
+
+mentor1 = User.new(
+  first_name: "Thomas",
+  last_name: "Crane",
+  age: rand(40..50),
+  city: "Wagenaarstraat 307, 1093CN Amsterdam",
+  phone_number: 3053454123,
+  about: "Inquisitive, energetic computer science specialist skilled in leadership, with a strong foundation in math, logic, and cross-platform coding. Seeking to leverage solid skills in collaboration",
+  email: "thomasc@email.com",
+  password: "123456"
+  )
+UserIndustry.create(industry: Industry.first, user: mentor1, work_experience: "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS, PHP, MySQL, Java, JavaScript, Python, SQL, with an undergraduate degree." )
+mentor1.save!
+
+puts 'Finished creating Mentor1'
+
+puts 'Creating Mentor2'
+
+mentor2 = User.new(
+  first_name: "Alvaro",
+  last_name: "Mcgee",
+  age: rand(40..50),
+  city: "Sonnenallee 51, Freistaat Bayern",
+  phone_number: 2233454123,
+  about: "Built and maintained a working customer database, order system, and picking and packing system with MySQL, complete with error handling and data validation.",
+  email: "alvamc@email.com",
+  password: "123456"
+  )
+UserIndustry.create(industry: Industry.first, user: mentor2, work_experience: "Created many working sales website with PHP, JavaScript, HTML, CSS, and MailChimp." )
+mentor2.save!
+
+puts 'Finished creating Mentor2'
+
+puts 'Creating Mentor3'
+
+mentor3 = User.new(
+  first_name: "Pierre",
+  last_name: "Cox",
+  age: rand(40..50),
+  city: "26 rue Pierre De Coubertin, Toulouse",
+  phone_number: 3057624123,
+  about: "Developed full-stack web applications which processed, analyzed, and rendered data visually.",
+  email: "pierrecox@email.com",
+  password: "123456"
+  )
+UserIndustry.create(industry: Industry.first, user: mentor3, work_experience: "Operating Systems Architecture, Linux/Unix Programming, Usability in Website and Software Design, C++ Programming I & II, Web Page Development." )
+mentor3.save!
+
+puts 'Finished creating Mentor3'
+
+puts 'Creating Mentor4'
+
+mentor4 = User.new(
+  first_name: "Miranda",
+  last_name: "Shaffer",
+  age: rand(40..50),
+  city: "Burgemeester Hermansstraat 131, 5021CP Tilburg",
+  phone_number: 309836123,
+  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99% client satisfaction.",
+  email: "mishaffer@email.com",
+  password: "123456"
+  )
+UserIndustry.create(industry: Industry.first, user: mentor4, work_experience: "Adobe Creative Suite, HTML, CSS. Creates seamless UX and UI with creative but functional designs. Designed 10+ websites, including an ecommerce baseball hat sales site." )
+mentor4.save!
+
+puts 'Finished creating Mentor4'
+
 
 counter = 0
 
