@@ -3,14 +3,15 @@ class Meeting < ApplicationRecord
   belongs_to :availability
   has_one :chatroom
 
-  #validate :not_equal
-
   after_create :create_chatroom
+
+  validate :not_equal
+  delegate :mentor, to: :availability
 
   private
 
   def not_equal
-    if mentoree_id == mentor_id
+    if mentoree == mentor
       errors.add(:mentoree_id, "Mentoree can't be the same person as the mentor")
     end
   end
