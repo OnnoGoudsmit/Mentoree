@@ -40,7 +40,7 @@
 
             <%= link_to "My dashboard", my_dashboard_path, class: "dropdown-item" %>
             <%= link_to "Edit work experience", new_after_sign_up_user_industry_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Meeting topics", new_after_sign_up_advice_preference_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Edit meeting topics", new_after_sign_up_advice_preference_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
