@@ -122,7 +122,7 @@ mentor1.photo.attach(io: img_user, filename: "images-first.png", content_type: '
 3.times do |index|
   Availability.create(
     mentor_id: mentor1.id,
-    slot: Date.today+rand(160)
+    slot: Date.today+rand(40)
     )
 end
 # user_one_industry = UserIndustry.create(user_id: mentor1.id, industry_id: Industry.all.sample)
@@ -134,7 +134,7 @@ mentor2.photo.attach(io: URI.open("https://i.pinimg.com/originals/56/97/bd/5697b
 3.times do |index|
   Availability.create(
     mentor_id: mentor2.id,
-    slot: Date.today+rand(160)
+    slot: Date.today+rand(40)
     )
 end
 
@@ -145,7 +145,7 @@ mentor3.photo.attach(io: URI.open("https://purepng.com/public/uploads/large/pure
 3.times do |index|
   Availability.create(
     mentor_id: mentor3.id,
-    slot: Date.today+rand(160)
+    slot: Date.today+rand(40)
     )
 end
 
@@ -156,7 +156,7 @@ mentor4.photo.attach(io: URI.open("https://generated.photos/vue-static/home/feed
 3.times do |index|
   Availability.create(
     mentor_id: mentor4.id,
-    slot: Date.today+rand(160)
+    slot: Date.today+rand(40)
     )
 end
 
