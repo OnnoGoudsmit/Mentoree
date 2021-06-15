@@ -117,8 +117,8 @@ puts 'Finished creating Mentor4'
 puts "Creating 3 availabilities for Mentor 1"
 
 mentor1 = User.first
-img_user = open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
-mentor1.photo.attach(io: handle_string_io_as_file(img_user), filename: "images-first.png", content_type: 'image/png')
+img_user = URI.open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80")
+mentor1.photo.attach(io: img_user, filename: "images-first.png", content_type: 'image/png')
 3.times do |index|
   Availability.create(
     mentor_id: mentor1.id,
