@@ -32,6 +32,7 @@
             input_html: {class: 'category-selector'},
             collection: @slots,
             label_method: :slot %>
+            <!-- value: slot.strftime("%a %d %b %n %R") -->
           <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
         <% end %>
       </div>
