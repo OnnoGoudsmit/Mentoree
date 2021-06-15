@@ -9,4 +9,7 @@ class DashboardPolicy < ApplicationPolicy
     true if user
   end
 
+  def create
+    true if current_user
+  end
 end
