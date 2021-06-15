@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :user_industries, only: [ :new, :create ]
   end
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
   resources :meetings, only: [:index, :create]
 

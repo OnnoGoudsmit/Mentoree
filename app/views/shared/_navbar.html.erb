@@ -39,6 +39,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
             <%= link_to "My dashboard", my_dashboard_path, class: "dropdown-item" %>
+            <%= link_to "My chatroom", chatroom_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit work experience", new_after_sign_up_user_industry_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit meeting topics", new_after_sign_up_advice_preference_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
