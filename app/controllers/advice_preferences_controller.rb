@@ -12,8 +12,8 @@ class AdvicePreferencesController < ApplicationController
     # we need `restaurant_id` to associate review with corresponding restaurant
     @user = current_user
     @advice_preference.user = @user
-
     if @advice_preference.save
+
       redirect_to my_dashboard_path(current_user)
     else
       render :new
@@ -24,7 +24,7 @@ class AdvicePreferencesController < ApplicationController
   private
 
   def advice_preference_params
-    params.require(:advice_preference).permit(:subject, :industry_id)
+    params.require(:advice_preference).permit(:industry_id, subject: [])
   end
 
 end

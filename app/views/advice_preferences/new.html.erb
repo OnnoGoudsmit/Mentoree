@@ -16,7 +16,7 @@
             <p>Selec the topics you would like to talk about.</p>
             <br>
 
-            <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item', legend_tag: false  %>
+            <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS.keys, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item', legend_tag: false  %>
           <br>
           <div class="form-actions">
             <%= f.button :submit, "Submit", class: "btn btn-flat" %>

@@ -10,7 +10,6 @@ class UserIndustriesController < ApplicationController
     @user_industry = UserIndustry.new(user_industry_params)
     @user = current_user
     @user_industry.user = @user
-
     if @user_industry.save
       redirect_to new_after_sign_up_advice_preference_path(current_user)
     else
