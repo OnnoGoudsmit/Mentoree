@@ -1,22 +1,35 @@
 <div class="row">
   <!-- Use offset to create empty columns on the side -->
   <div class="col-8 offset-2 card">
+    <%= link_to "back", my_dashboard_path, class: "btn back-button" %>
+    <br><h2 style="text-align: center">Mentor chat</h2><br>
     <div class="row">
       <!-- Create as many divs as you want, as long as col adds up to 12 -->
       <div class="col-12">
         <!-- Place content here -->
-        <br><h2 style="text-align: center">Mentor chat</h2><br>
 
-        <p>Temporary name: <%= @chatroom.name %></p>
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
-            <%= render 'messages/message', message: message %> <%# message: key in the partial, message is the local variable (from the loop)  %>
+        <div class="card-messages">
 
-          <% end %>
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
+
+              <% if @chatroom.meeting.mentoree_id == message.user_id  %>
+                <%= render 'messages/message', message: message %> <%# message: key in the partial, message is the local variable (from the loop)  %>
+              <% else  %>
+                <%= render 'messages/message-right', message: message %>
+              <% end  %>
+            <% end %>
+            <script>
+              document.getElementById('messages').scrollIntoView({ behavior: 'smooth', block: 'end' })
+            </script>
+
+          </div>
         </div>
 
+
+
         <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "message-input-field"  %>
+        <%= f.input :content, label: false, placeholder: "Message", class: "message-input-field"  %>
         <% end %>
       </div>
     </div>
