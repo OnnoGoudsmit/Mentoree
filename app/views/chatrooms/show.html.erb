@@ -7,13 +7,20 @@
         <!-- Place content here -->
         <br><h2 style="text-align: center">Mentor chat</h2><br>
 
-        <p>Temporary name: <%= @chatroom.name %></p>
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
-            <%= render 'messages/message', message: message %> <%# message: key in the partial, message is the local variable (from the loop)  %>
+        <div class="messages-window-card">
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+            <% @chatroom.messages.each do |message| %>
 
-          <% end %>
+              <div class="card-messages col-6">
+                <%= render 'messages/message', message: message %> <%# message: key in the partial, message is the local variable (from the loop)  %>
+              </div>
+              <div class="avatar-chat">
+                <%= cl_image_tag message.user.photo.key, class: "avatar-small"%>
+              </div>
+            <% end %>
+          </div>
         </div>
+
 
         <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
           <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "message-input-field"  %>

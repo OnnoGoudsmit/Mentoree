@@ -1,0 +1,34 @@
+.messages-window {
+
+}
+
+
+.message-container {
+
+}
+
+.message-avatar-name{
+  display: flex;
+  flex-directions: rows;
+  align-items: center;
+  margin-top: 10px;
+  h3 {
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+}
+
+.card-messages {
+  overflow: hidden;
+  background: $m-grey-blue;
+  border-radius: 20px 20px 20px 0px;
+  margin: 20px;
+}
+
+.messages-window-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 20px;
+  border-color: $m-grey;
+  border-width: 0.5px;
+}
