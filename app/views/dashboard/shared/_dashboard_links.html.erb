@@ -1,0 +1,45 @@
+<%#= link_to "Prepare meeting", root_path, class: "btn btn-ghost" <---- WHEN USER SELECTED SLOT THEN PREPARE MEETING%>
+<%# raise  %>
+<% if @meeting  %>
+  <div>
+    <div class="row">
+      <div class="col-6 mentor-profile">
+        <h3>Your mentor</h3>
+        <%= cl_image_tag @meeting.availability.user.photo.key, class: "avatar-large mb-3" %>
+        <h4>
+          <%= @meeting.availability.user.first_name %> <%= @meeting.availability.user.last_name %>
+        </h4>
+        <p><%=  %></p>
+      </div>
+      <div class="col-6 meeting-date">
+        <h3>Meeting</h3>
+        <%= image_tag "mentoree-illustration-7.png", alt: "mentoree image", height: 150 %>
+        <br>
+        <h4><%= @meeting.availability.slot.strftime('%d %B') %></h4>
+        <strong><%= @meeting.availability.slot.strftime('%A') %></strong>
+        <br>
+        <%= @meeting.availability.slot.strftime('%R') %>
+      </div>
+    </div>
+    <%= link_to 'Prepare your meeting', chatroom_path(@meeting), class: "btn btn-flat mr-3" %>
+    <%= link_to 'Chat with mentor', chatroom_path(@meeting), class: "btn btn-ghost" %>
+  </div>
+<% elsif user_completed_profile(@user) && user_completed_user_industries(@user) && user_completed_advice_preference(@user) %>
+  <div>
+    <%= image_tag "mentoree-illustration-6.png", alt: "mentoree image", height: 150 %>
+    <br>
+    <%= link_to 'Find mentor',after_sign_up_index_path, class: "btn btn-flat" %>
+  </div>
+<%elsif !user_completed_profile(@user) %>
+  <div class="dashboard-button">
+    <%= link_to "complete profile", new_after_sign_up_path, class: "btn btn-ghost" %>
+  </div>
+<%elsif !user_completed_user_industries(@user) %>
+<div>
+  <%= link_to 'Work experience', new_after_sign_up_user_industry_path(@user), class: "btn btn-ghost" %>
+</div>
+<% else %>
+  <div>
+    <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(@user), class: "btn btn-ghost" %>
+  </div>
+<% end  %>
