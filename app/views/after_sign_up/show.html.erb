@@ -38,9 +38,12 @@
           <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
         <% end %>
       </div>
+        <h2 class="text-center mt-4">Mentor's Reviews </h2>
         <div>
-          <h2>Mentor's Reviews</h2>
-          <%= link_to "Add a review", new_meeting_review_path(@meeting) %>
+
+          <% if meeting = current_user.meetings.joins(:availability).find_by(availabilities: { mentor_id: @mentor.id }) %>
+            <%= link_to "Add a review", new_meeting_review_path(meeting) %>
+          <% end %>
           <% @meeting.reviews.each do |review| %>
             <p>
             <%= review.content %>
