@@ -1,16 +1,30 @@
-<h1>#<%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.current_user.first_name %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
-  <% end %>
-</div>
+<div class="row">
+  <!-- Use offset to create empty columns on the side -->
+  <div class="col-8 offset-2 card">
+    <div class="row">
+      <!-- Create as many divs as you want, as long as col adds up to 12 -->
+      <div class="col-12">
+        <!-- Place content here -->
+        <br><h2 style="text-align: center">Mentor chat</h2><br>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
+        <p>Temporary name: <%= @chatroom.name %></p>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message-container" id="message-<%= message.id %>">
+              <i class="author">
+                <%# raise %>
+                <span><%= message.user.first_name %></span>
+                <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+              </i>
+              <p><%= message.content %></p>
+            </div>
+          <% end %>
+        </div>
+
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", class: "message-input-field"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
