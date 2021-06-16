@@ -20,8 +20,10 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
+    authorize @review
     @review.destroy
     redirect_to after_sign_up_path(@review.meeting.mentoree_id)
+
   end
 
   private
