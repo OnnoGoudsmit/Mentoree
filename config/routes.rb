@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :meetings, only: [:index, :create, :edit, :update]
+  resources :meetings, only: [:index, :create, :edit, :update] do
+    resources :reviews, only: [ :new, :create ]
+  end
+  resources :reviews, only: [ :destroy ]
+
 
   # Dashboard route
   get 'my_dashboard', to: 'dashboard#my_dashboard'
@@ -26,5 +30,4 @@ Rails.application.routes.draw do
 
   # Advice Preference routes
   # resources :advice_preferences, only: [:new, :create]
-
 end
