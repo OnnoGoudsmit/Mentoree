@@ -1,0 +1,5 @@
+meta_product_name: "Mentoree"
+meta_title: "Mentoree - Find a mentor for career advice! "
+meta_description: "Join us so we can connect you to an experienced mentor in various fields of work for free! "
+meta_image: "homepage-Illustrations-2.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
