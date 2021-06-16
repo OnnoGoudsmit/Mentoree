@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   # Dashboard route
   get 'my_dashboard', to: 'dashboard#my_dashboard'
+  get '/user' => "dashboard#my_dashboard", :as => :user_root
 
   # Advice Preference routes
   # resources :advice_preferences, only: [:new, :create]
