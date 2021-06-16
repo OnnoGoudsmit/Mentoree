@@ -14,7 +14,7 @@ Industry.destroy_all
 
 puts 'Creating Industries'
 
-industries_array = ["Wev-development", "Health Care", "Industrial Design", "Finance", "Engineering", "Hospitality", "Management", "Education", "Sports"]
+industries_array = ["Web-development", "Health Care", "Industrial Design", "Finance", "Engineering", "Hospitality", "Management", "Education", "Sports"]
 
 industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
 

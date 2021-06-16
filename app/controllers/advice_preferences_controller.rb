@@ -14,7 +14,7 @@ class AdvicePreferencesController < ApplicationController
     @advice_preference.user = @user
     if @advice_preference.save
 
-      redirect_to my_dashboard_path(current_user)
+      redirect_to my_dashboard_path
     else
       render :new
     end
