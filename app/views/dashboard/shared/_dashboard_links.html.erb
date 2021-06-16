@@ -16,10 +16,10 @@
           <%= link_to after_sign_up_path(@meeting.availability.mentor_id) do %>
             <i class="far fa-user-circle"></i>
           <% end %>
-          <div class="tooltip">
+          <!-- <div class="tooltip"> -->
             <i class="fas fa-mobile-alt"></i>
-            <span class="tooltiptext"><%= @meeting.availability.user.phone_number %></span>
-          </div>
+            <!-- <span class="tooltiptext"><%= @meeting.availability.user.phone_number %></span> -->
+          <!-- </div> -->
         </div>
       </div>
       <div class="col-6 meeting-date">
@@ -32,7 +32,8 @@
         <%= @meeting.availability.slot.strftime('%R') %>
       </div>
     </div>
-    <%= link_to 'Prepare your meeting', chatroom_path(@meeting), class: "btn btn-flat mr-3" %>
+    <%= link_to 'Prepare your meeting', chatroom_path(@meeting), class: "btn btn-flat" %>
+    <%#= link_to 'Add a review', new_meeting_review_path(@meeting), class: "btn btn-ghost"%>
   </div>
 <% elsif user_completed_profile(@user) && user_completed_user_industries(@user) && user_completed_advice_preference(@user) %>
   <div>
