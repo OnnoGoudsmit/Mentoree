@@ -1,11 +1,17 @@
-.messages-window {
 
+.messages-container-left {
+  display: flex;
+  flex-direction: rows;
+  margin-top: 20px;
 }
 
 
-.message-container {
-
+.messages-container-right {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 20px;
 }
+
 
 .message-avatar-name{
   display: flex;
@@ -18,17 +24,46 @@
   }
 }
 
-.card-messages {
+.messages-bubble-left {
   overflow: hidden;
   background: $m-grey-blue;
   border-radius: 20px 20px 20px 0px;
-  margin: 20px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: left;
 }
 
-.messages-window-card {
+.messages-bubble-right {
+  overflow: hidden;
+  background: $m-tan;
+  border-radius: 20px 20px 0px 20px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: left;
+}
+
+.message-content {
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.card-messages {
   overflow: hidden;
   background: white;
-  border-radius: 20px;
-  border-color: $m-grey;
-  border-width: 0.5px;
+  border-radius: 10px;
+  border: 0.7px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+  max-height: 60vh;
 }
+
+.avatar-chat {
+  margin-top: 25px;
+}
+
+.paragraph-chat-time {
+  margin-left: 10px;
+}
+
