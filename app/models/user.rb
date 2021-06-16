@@ -57,4 +57,8 @@ class User < ApplicationRecord
   def upcoming_meetings
     self.meetings.joins(:availability).where('slot > ?', DateTime.now).order(:slot)
   end
+
+  def get_advice_preference
+    self.advice_preferences
+  end
 end

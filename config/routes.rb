@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :meetings, only: [:index, :create]
+  resources :meetings, only: [:index, :create, :edit, :update]
 
   # Dashboard route
   get 'my_dashboard', to: 'dashboard#my_dashboard'

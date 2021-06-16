@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-8 offset-2 card">
+      <div class="row">
+        <div class="col-12">
+          <h2>Prepare your meeting</h2>
+          <h4>To make sure you and your mentor can properly prepare for your meeting, make sure to think of some questions you can ask your mentor</h4>
+          <%= simple_form_for(@meeting, html: { method: :put }) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :prep_content %>
+            </div>
+            <div class="form-actions">
+              <%= f.submit "Submit your questions", class: "btn btn-flat"%>
+            </div>
+          <% end %>
+          <%# @subjects.each do |subject| %>
+            <%#= subject.subject %>
+          <%# end %>
+        </div>
+      </div>
+    </div>
+  </div>
