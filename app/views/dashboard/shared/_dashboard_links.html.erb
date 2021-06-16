@@ -2,14 +2,25 @@
 <%# raise  %>
 <% if @meeting  %>
   <div>
-    <div class="row">
+    <div class="row pb-2">
       <div class="col-6 mentor-profile">
         <h3>Your mentor</h3>
-        <%= cl_image_tag @meeting.availability.user.photo.key, class: "avatar-large mb-3" %>
+        <%= cl_image_tag @meeting.availability.user.photo.key, class: "avatar-med-lg mb-3" %>
         <h4>
           <%= @meeting.availability.user.first_name %> <%= @meeting.availability.user.last_name %>
         </h4>
-        <p><%=  %></p>
+        <div class="contact-icons">
+          <%= link_to chatroom_path(@meeting) do %>
+            <i class="far fa-comment-dots"></i>
+          <% end %>
+          <%= link_to after_sign_up_path(@meeting.availability.mentor_id) do %>
+            <i class="far fa-user-circle"></i>
+          <% end %>
+          <div class="tooltip">
+            <i class="fas fa-mobile-alt"></i>
+            <span class="tooltiptext"><%= @meeting.availability.user.phone_number %></span>
+          </div>
+        </div>
       </div>
       <div class="col-6 meeting-date">
         <h3>Meeting</h3>
@@ -22,7 +33,6 @@
       </div>
     </div>
     <%= link_to 'Prepare your meeting', chatroom_path(@meeting), class: "btn btn-flat mr-3" %>
-    <%= link_to 'Chat with mentor', chatroom_path(@meeting), class: "btn btn-ghost" %>
   </div>
 <% elsif user_completed_profile(@user) && user_completed_user_industries(@user) && user_completed_advice_preference(@user) %>
   <div>
