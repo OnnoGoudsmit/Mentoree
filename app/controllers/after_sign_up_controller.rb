@@ -15,6 +15,8 @@ class AfterSignUpController < ApplicationController
     @mentor = User.find(params[:id])
     # # Checking slots of mentor
     @slots = @mentor.get_slots
+    #Mentoree already has upcoming meeting
+    @upcoming_meeting = current_user.upcoming_meetings&.first
     # # raise
     @meeting = Meeting.new(mentoree_id: @mentoree)
     skip_authorization
