@@ -24,6 +24,13 @@ User.destroy_all
 
 # -------------------------- Mentors --------------------------- #
 
+work_experience = [
+    "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS, PHP, MySQL, Java, JavaScript, Python, SQL, with an undergraduate degree.",
+    "test 2",
+    "test 3",
+    "test 4",
+    "test 5"]
+
 puts 'Creating Mentor1'
 
 mentor1 = User.new(
@@ -32,12 +39,12 @@ mentor1 = User.new(
   age: 41,
   city: "Rotterdam",
   phone_number: 3053454123,
-  about: "Inquisitive, energetic computer science specialist skilled in leadership, with a strong foundation in math, logic, and cross-platform coding. Seeking to leverage solid skills in collaboration",
+  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99% client satisfaction.",
   email: "thomas@email.com",
   password: "123456"
   )
 
-UserIndustry.create(industry: Industry.last, user: mentor1, work_experience: "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS, PHP, MySQL, Java, JavaScript, Python, SQL, with an undergraduate degree." )
+UserIndustry.create(industry: Industry.last, user: mentor1, work_experience: work_experience )
 mentor1.save!
 
 puts 'Finished creating Mentor1'
@@ -68,7 +75,7 @@ mentor3 = User.new(
   age: 51,
   city: "Paris",
   phone_number: 3057624123,
-  about: "Developed full-stack web applications which processed, analyzed, and rendered data visually.",
+  about: "Inquisitive, energetic computer science specialist skilled in leadership, with a strong foundation in math, logic, and cross-platform coding. Seeking to leverage solid skills in collaboration.",
   email: "brianx@email.com",
   password: "123456"
   )
@@ -238,7 +245,6 @@ user_daniel.photo.attach(io: File.open('app/assets/images/mentoree-daniel.png'),
 UserIndustry.create(industry: Industry.all.sample, user: user_daniel, work_experience: "This is the work experience of daniel." )
 user_daniel.save!
 
-#Review.create(content: "Extremely happy with my mentor meeting. It gave me a new perspective about my field.")
 
 puts 'Finished creating user_daniel'
 
@@ -284,6 +290,8 @@ puts "Creating 3 past meeting daniel"
 
 past_availability_daniel = Availability.create(mentor_id: mentor1.id, slot: Date.today-rand(3))
 past_meeting_daniel = Meeting.create(availability: past_availability_daniel, mentoree_id: user_daniel.id )
+
+# ---------------------- User_industries Work Experience ----------------------- #
 
 
 puts "💫 OMG Finishing seeding! 🌈"

@@ -15,7 +15,11 @@
           <p>Senior Developer</p>
           <p><%= @mentor&.about %></p>
           <ul>
-            <li><strong>#</strong></li>
+            <% @mentor&.user_industry.work_experience.each do |experience|  %></li>
+              <li><%= experience %></li>
+              <li><%= experience %></li>
+              <li><%= experience %></li>
+            <% end %>
           </ul>
         </div>
         <div class="stats-mentor p-3 col-2">
