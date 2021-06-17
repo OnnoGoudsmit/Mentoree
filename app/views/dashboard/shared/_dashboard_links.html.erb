@@ -1,4 +1,4 @@
-<% if !@previous_meeting.reviews.last %>
+<% if @previous_meeting && !@previous_meeting.reviews.last %>
   <div>
     <div class="row pb-2">
       <div class="col-6 mentor-profile">
@@ -89,15 +89,3 @@
     <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(@user), class: "btn btn-ghost" %>
   </div>
 <% end  %>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
