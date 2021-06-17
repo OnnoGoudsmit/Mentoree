@@ -61,6 +61,10 @@ class User < ApplicationRecord
     self.meetings.joins(:availability).where('slot > ?', DateTime.now).order(:slot)
   end
 
+  def previous_meetings
+    self.meetings.joins(:availability).where('slot < ?', DateTime.now).order(:slot)
+  end
+
   def get_subjects
     JSON.parse(self.advice_preferences&.last.subject).reject(&:empty?)
   end
