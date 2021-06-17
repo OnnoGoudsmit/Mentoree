@@ -1,38 +1,7 @@
-<div class="container-form">
+<h1>Create a Review for a Mentor</h1>
 
-  <div class="row">
-    <div class="col-8 offset-2 card p-3">
-      <div class="card-advice-preference">
-        <div class="back-button">
-          <%= link_to my_dashboard_path do %>
-            <i class="fas fa-arrow-left"></i>
-          <% end %>
-        </div>
-
-        <h2>Create a Review for your Mentor</h2>
-        <br>
-            <%= simple_form_for([@meeting, @review]) do |f|  %>
-                <%= f.input :content, label: false, placeholder: 'Add some review...'%>
-                <div>
-                  <p>Did you like the your Meeting?</p>
-                  <%= f.input :rating,
-                  label: '<i class="far fa-thumbs-up fa-2x"> </i>'.html_safe,
-                  required: false,
-                  input_html: { class: "d-none thumbs-up" } %>
-                </div>
-
-                <div class="form-actions p-2">
-                  <%= f.submit :Create, class: "btn btn-flat" %>
-                </div>
-            <% end %>
-          </div>
-      </div>
-   </div>
-  </div>
-</div>
-
-
-
-
-
-
+<%= simple_form_for([@meeting, @review]) do |f|  %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit :create %>
+<% end %>

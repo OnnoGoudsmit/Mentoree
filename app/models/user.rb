@@ -6,14 +6,11 @@ class User < ApplicationRecord
   has_many :meetings, foreign_key: :mentoree_id, dependent: :destroy
   has_many :reviews, through: :meetings
 
-
   has_one_attached :photo
 
   has_many :advice_preferences, dependent: :destroy
   has_many :industries, through: :advice_preferences
   has_many :availabilities, foreign_key: :mentor_id, dependent: :destroy
-  has_many :meetings_as_mentor, through: :availabilities, source: :meeting
-  has_many :mentors_reviews, through: :meetings_as_mentor, source: :reviews
 
   has_one :user_industry, dependent: :destroy
   has_one :industry_experience, through: :user_industries, source: :industry
