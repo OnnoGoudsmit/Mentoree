@@ -9,27 +9,27 @@
           <% end %>
         </div>
 
-        <h2>Create a Review for your Mentor</h2>
+        <h2>Write review for your mentor</h2>
         <br>
-            <%= simple_form_for([@meeting, @review]) do |f|  %>
-                <%= f.input :content, label: false, placeholder: 'Add some review...'%>
-                <div>
-                  <p>Did you like the your Meeting?</p>
-                  <%= f.input :rating,
-                  label: '<i class="far fa-thumbs-up fa-2x"> </i>'.html_safe,
-                  required: false,
-                  input_html: { class: "d-none thumbs-up" } %>
-                </div>
+          <%= simple_form_for([@meeting, @review]) do |f|  %>
+              <%= f.input :content, label: false, placeholder: 'Write a review...'%>
+              <div>
+                <p>Let us know if you where happy with the meeting.</p>
+                <%= f.input :rating,
+                label: '<i class="far fa-thumbs-up fa-2x"> </i>'.html_safe,
+                required: false,
+                input_html: { class: "d-none grey thumbs-up" } %>
+              </div>
 
-                <div class="form-actions p-2">
-                  <%= f.submit :Create, class: "btn btn-flat" %>
-                </div>
-            <% end %>
-          </div>
-      </div>
-   </div>
+              <div class="form-actions p-2">
+                <%= f.submit :Submit, class: "btn btn-flat" %>
+              </div>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>
+
 
 
 

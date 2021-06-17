@@ -2,7 +2,9 @@
 
   <div class="row">
     <div class="col-6 offset-3 card p-3">
-      <%= link_to "back", my_dashboard_path, class: "back-button" %>
+      <%= link_to my_dashboard_path do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
 
       <br><h2>Complete Profile</h2>
       <p>Tell the mentors more about you.</p>
