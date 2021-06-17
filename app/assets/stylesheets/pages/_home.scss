@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 
+// About
 .homepage-text {
   margin-top: 70px;
   margin-bottom: 70px;
@@ -18,6 +19,11 @@
   justify-content: space-around;
 }
 
+
+// Who are we
+.white-background-home {
+  background-color: white;
+}
 .home-page-block-2 {
   display: flex;
   flex-direction: row-reverse;
@@ -26,7 +32,43 @@
   padding: 20px 0px;
 }
 
-.white-background-home {
-  background-color: white;
+// How it works
+.blue-background-home {
+  background-color: $m-grey-blue;
 }
+
+.home-page-block-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 64px;
+  .homepage-text {
+    margin-top: 50px;
+  }
+}
+.how-it-works-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.how-it-works {
+  text-align: center;
+}
+
+
+// Testimonials
+
+.home-page-block-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+  .homepage-text {
+    margin-top: 50px;
+    margin-bottom: 24px;
+  }
+}
+
 
