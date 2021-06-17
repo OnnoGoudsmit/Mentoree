@@ -25,11 +25,18 @@ User.destroy_all
 # -------------------------- Mentors --------------------------- #
 
 work_experience = [
-    "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS, PHP, MySQL, Java, JavaScript, Python, SQL, with an undergraduate degree.",
-    "test 2",
-    "test 3",
-    "test 4",
-    "test 5"]
+    "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS,JavaScript, Python",
+    "Co-Founder of techlab XR - 2006",
+    "Co-Founder of techlab XR - 2001",
+    "Founder of BNB IQ - 2010",
+    "Founder of NOMICS",
+    "CTO Metallar - 2017",
+    "CTO Archtype IT - 2012",
+    "Team manager Techclassy - 2003",
+    "Lead Developer GranFave B.V. - 2013",
+    "Lead Developer Techeme - 2007",
+    "Lead Developer Intech - 2005"
+  ]
 
 puts 'Creating Mentor1'
 
@@ -39,7 +46,7 @@ mentor1 = User.new(
   age: 41,
   city: "Rotterdam",
   phone_number: 3053454123,
-  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99% client satisfaction.",
+  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99 client satisfaction.",
   email: "thomas@email.com",
   password: "123456"
   )
@@ -62,7 +69,7 @@ mentor2 = User.new(
   password: "123456"
   )
 
-UserIndustry.create(industry: Industry.last, user: mentor2, work_experience: "Created many working sales website with PHP, JavaScript, HTML, CSS, and MailChimp." )
+UserIndustry.create(industry: Industry.last, user: mentor2, work_experience: work_experience )
 mentor2.save!
 
 puts 'Finished creating Mentor2'
@@ -80,7 +87,7 @@ mentor3 = User.new(
   password: "123456"
   )
 
-UserIndustry.create(industry: Industry.last, user: mentor3, work_experience: "Operating Systems Architecture, Linux/Unix Programming, Usability in Website and Software Design, C++ Programming I & II, Web Page Development." )
+UserIndustry.create(industry: Industry.last, user: mentor3, work_experience: work_experience )
 mentor3.save!
 
 puts 'Finished creating Mentor3'
@@ -93,12 +100,12 @@ mentor4 = User.new(
   age: 45,
   city: "Berlin",
   phone_number: 309836123,
-  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99% client satisfaction.",
+  about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99 client satisfaction.",
   email: "miranda@email.com",
   password: "123456"
   )
 
-UserIndustry.create(industry: Industry.last, user: mentor4, work_experience: "Adobe Creative Suite, HTML, CSS. Creates seamless UX and UI with creative but functional designs. Designed 10+ websites, including an ecommerce baseball hat sales site." )
+UserIndustry.create(industry: Industry.last, user: mentor4, work_experience: work_experience )
 mentor4.save!
 
 puts 'Finished creating Mentor4'
@@ -270,7 +277,7 @@ mentors_array.each do |mentor|
     date.change(hour: rand(9..18))#.to_a.sample)
     Availability.create(
       mentor_id: mentor.id,
-      slot: date + rand(14)
+      slot: date + rand(1..14)
       )
   end
 
