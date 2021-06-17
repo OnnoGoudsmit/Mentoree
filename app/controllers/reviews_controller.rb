@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.meeting_id = @meeting.id
     if @review.save
     # we want to display the review in the mentor show page
-      redirect_to after_sign_up_path(@meeting.mentoree_id)
+      redirect_to after_sign_up_path(@review.meeting.mentor.id)
     else
       render :new
     end
@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize @review
     @review.destroy
-    redirect_to after_sign_up_path(@review.meeting.mentoree_id)
+    redirect_to after_sign_up_path(@review.meeting.mentor.id)
 
   end
 

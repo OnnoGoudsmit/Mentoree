@@ -37,8 +37,8 @@
         <p><%= @meeting.prep_content %></p>
       <% end %>
     </div>
-    <%= link_to 'Prepare your meeting', edit_meeting_path(@meeting), class: "btn btn-flat" %>
-    <%#= link_to 'Add a review', new_meeting_review_path(@meeting), class: "btn btn-ghost"%>
+    <%= link_to 'Prepare meeting', edit_meeting_path(@meeting), class: "btn btn-flat" %>
+    <%= link_to "Add a review", new_meeting_review_path(@meeting), class: "btn btn-flat" %>
   </div>
 <% elsif user_completed_profile(@user) && user_completed_user_industries(@user) && user_completed_advice_preference(@user) %>
   <div>

@@ -39,15 +39,14 @@
         <% end %>
       </div>
         <h2 class="text-center mt-4">Mentor's Reviews </h2>
-          <% if meeting = current_user.meetings.joins(:availability).find_by(availabilities: { mentor_id: @mentor.id }) %>
-            <%= link_to "Add a review", new_meeting_review_path(meeting) %>
+        <% if meeting = current_user.meetings.joins(:availability).find_by(availabilities: { mentor_id: @mentor.id }) %>
           <% end %>
-
 
           <% @mentor.mentors_reviews.each do |review| %>
           <% mentoree = review.meeting.mentoree %>
             <div class='row'>
               <div class="col-8 offset-2 card card-dashboard-review mb-3">
+                <p class='review-date'><%= review.created_at.strftime("%d of %B, %Y") %></p>
                 <div class="mentor-avatar-big col-3 align-self-left text-left">
                   <% if mentoree.photo.attached? %>
                     <%= cl_image_tag mentoree.photo.key, class: 'avatar-medium', crop: :fill %>
@@ -55,16 +54,18 @@
                     <img class="avatar-medium" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
                   <% end %>
                 </div>
-                <div class="mentor-info col-7 text-left p-2">
-                  <h2><%= mentoree.first_name %> <%= mentoree.last_name %></h2>
-                  <h3> <%= mentoree.user_industry.industry.name %> </h3>
-                </div>
-                    <p class="card-mentor-big text-left p-2"> <%= review.content %> </p>
+                  <div class="row">
+                    <div class="mentor-info col-7 text-left p-3">
+                      <h2><%= mentoree.first_name %> <%= mentoree.last_name %></h2>
+                      <h3> <%= mentoree.user_industry.industry.name %> </h3>
+                      <p class="card-mentor-big text-left"> <%= review.content %> </p>
+                    </div>
+                  </div>
                   <div class="row">
                     <!-- Create as many divs as you want, as long as col adds up to 12 -->
                     <div class="col-12">
                       <% if policy(review).destroy? %>
-                        <h6> <%= link_to 'Delete Review', review_path(review), method: :delete, data: {confirm: 'Are you sure?'} %> </h6>
+                        <h6> <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: 'Are you sure?'} %> </h6>
                       <% end %>
                     </div>
                   </div>
