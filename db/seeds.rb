@@ -21,6 +21,7 @@ puts 'Finished creating Industries'
 puts "Destroying users"
 User.destroy_all
 
+
 # -------------------------- Mentors --------------------------- #
 
 puts 'Creating Mentor1'
@@ -260,7 +261,7 @@ puts "Creating 3 future availabilities"
 mentors_array.each do |mentor|
   3.times do |index|
     date = DateTime.now
-    date.change(hour: (9..18).to_a.sample)
+    date.change(hour: rand(9..18))#.to_a.sample)
     Availability.create(
       mentor_id: mentor.id,
       slot: date + rand(14)
