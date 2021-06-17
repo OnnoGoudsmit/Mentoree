@@ -46,14 +46,18 @@
           <% @mentor.reviews.each do |review| %>
             <div class='row'>
               <div class="col-8 offset-2 card card-dashboard mb-3">
-                <div class="mentor-avatar-big col-3 align-self-center">
+                <div class="mentor-avatar-big col-3 align-self-left text-left">
                   <% if @mentoree.photo.attached? %>
                     <%= cl_image_tag @mentoree.photo.key, class: 'avatar-medium', crop: :fill %>
                   <% else %>
                     <img class="avatar-medium" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
                   <% end %>
                 </div>
-                    <p> <%= review.content %> </p>
+                <div class="mentor-info col-7 text-left p-3">
+                  <h2><%= @mentor.first_name %> <%= @mentor.last_name %></h2>
+                  <h3> <%= @mentor.user_industry.industry.name %> </h3>
+                </div>
+                    <p class="card-mentor-big"> <%= review.content %> </p>
                   <div class="row">
                     <!-- Create as many divs as you want, as long as col adds up to 12 -->
                     <div class="col-12">

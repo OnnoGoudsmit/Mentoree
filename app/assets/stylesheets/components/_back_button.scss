@@ -1,8 +1,12 @@
-.back-button {
+.fa-arrow-left {
   display: flex;
   justify-self: left;
+  font-size: 28px;
   &:hover {
     color: $m-dark-grey;
   }
 }
 
+.fa-arrow-left:hover {
+  color: #1512B8;
+}
