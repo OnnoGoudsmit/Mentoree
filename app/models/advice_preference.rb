@@ -3,15 +3,14 @@ class AdvicePreference < ApplicationRecord
   belongs_to :user
 
   SUBJECTS = {
-    Salary: ["Question 1",'Question 2'],
-    Teamwork: ["Question 3",'Question 4'],
-    Management: ["Question 5",'Question 6'],
-    "Work-life Balance": ["Question 7",'Question 8'],
-    Freelancing: ["Question 9",'Question 10'],
-    "Soft Skills": ["Question 11",'Question 12'],
-    Careerpath: ["Question 13",'Question 14'],
-    Motivation: ["Question 15",'Question 16'],
-    Jobhunting: ["Question 17",'Question 18']
-        }
-
+    Salary: ['How much salary can I ask?', 'Am I earning my worth?'],
+    Teamwork: ['How do I deal with a tough coworker?', 'How can I get my team to bond better?'],
+    Management: ['How do I deal with my manager?', 'How can I properly present my idea to my manager?'],
+    'Work-life Balance': ['How do I create a better work-life balance?', 'When am I working too much?'],
+    Freelancing: ['Can I get some help with becoming a freelancer?', 'How can I promote myself as a freelancer?'],
+    'Soft Skills': ['How do I get better at being social?', 'How do improve my soft-skills?'],
+    Careerpath: ['What would be a logical next step?', 'Am I stuck in the company that I am in now?'],
+    Motivation: ['How can I keep myself motivated?', 'Will more money make me more motivated?'],
+    Jobhunting: ['Where can I best look for a job?', 'What skills do I need for a specific job?']
+  }
 end

@@ -17,7 +17,8 @@ class MeetingsController < ApplicationController
   def edit
     @meeting = Meeting.find(params[:id])
     authorize @meeting
-    @subjects = current_user.get_advice_preference
+    @subjects = current_user.get_subjects
+    @questions = AdvicePreference::SUBJECTS
   end
 
   def update
