@@ -4,6 +4,7 @@ class AfterSignUpController < ApplicationController
     # @users = User.all
     @mentors = User.mentors.last(3)
     @mentor =  User.mentors.first
+    #@work_experience = JSON.parse(@mentor.user_industry.work_experience)
     # @user.where(user.availability )
     skip_policy_scope
   end
@@ -19,6 +20,7 @@ class AfterSignUpController < ApplicationController
     @upcoming_meeting = current_user.upcoming_meetings&.first
     # # raise
     @meeting = Meeting.new(mentoree_id: @mentoree)
+    @work_experience = JSON.parse(@mentor.user_industry.work_experience)
     skip_authorization
   end
 
