@@ -1,6 +1,35 @@
-<%#= link_to "Prepare meeting", root_path, class: "btn btn-ghost" <---- WHEN USER SELECTED SLOT THEN PREPARE MEETING%>
-<%# raise  %>
-<% if @meeting  %>
+<% if !@previous_meeting.reviews.last %>
+  <div>
+    <div class="row pb-2">
+      <div class="col-6 mentor-profile">
+        <h3>Your mentor</h3>
+        <%= cl_image_tag @previous_meeting.availability.user.photo.key, class: "avatar-med-lg mb-3" %>
+        <h4>
+          <%= @previous_meeting.availability.user.first_name %> <%= @previous_meeting.availability.user.last_name %>
+        </h4>
+        <div class="contact-icons">
+          <%= link_to chatroom_path(@previous_meeting) do %>
+            <i class="far fa-comment-dots"></i>
+          <% end %>
+          <%= link_to after_sign_up_path(@previous_meeting.availability.mentor_id) do %>
+            <i class="far fa-user-circle"></i>
+          <% end %>
+          <!-- <div class="tooltip"> -->
+            <i class="fas fa-mobile-alt"></i>
+            <!-- <span class="tooltiptext"><%= @previous_meeting.availability.user.phone_number %></span> -->
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="col-6 leave-review">
+        <h3>Review</h3>
+        <%= image_tag "review-illustration.png", alt: "review image", height: 150 %>
+        <br>
+        <p>Please let us know how the meeting went with your mentor. Would you recommend this mentor to your fellow mentorees?</p>
+        <%= link_to 'Leave a review', new_meeting_review_path(@previous_meeting), class: "btn btn-ghost"%>
+      </div>
+    </div>
+  </div>
+<% elsif @meeting  %>
   <div>
     <div class="row pb-2">
       <div class="col-6 mentor-profile">
@@ -32,19 +61,20 @@
         <%= @meeting.availability.slot.strftime('%R') %>
       </div>
     </div>
-    <div class="prep-conten">
+    <div class="prep-content">
       <% if @meeting.prep_content %>
         <p><%= @meeting.prep_content %></p>
       <% end %>
     </div>
-    <%= link_to 'Prepare your meeting', edit_meeting_path(@meeting), class: "btn btn-flat" %>
-    <%#= link_to 'Add a review', new_meeting_review_path(@meeting), class: "btn btn-ghost"%>
+    <%= link_to 'Prepare meeting', edit_meeting_path(@meeting), class: "btn btn-flat" %>
   </div>
 <% elsif user_completed_profile(@user) && user_completed_user_industries(@user) && user_completed_advice_preference(@user) %>
   <div>
     <%= image_tag "mentoree-illustration-6.png", alt: "mentoree image", height: 150 %>
     <br>
     <%= link_to 'Find mentor',after_sign_up_index_path, class: "btn btn-flat" %>
+    <br>
+    <%= link_to 'Change meeting topics', new_after_sign_up_advice_preference_path(@user), class: "btn btn-ghost mt-3" %>
   </div>
 <%elsif !user_completed_profile(@user) %>
   <div class="dashboard-button">
@@ -59,3 +89,15 @@
     <%= link_to 'Advice preferences', new_after_sign_up_advice_preference_path(@user), class: "btn btn-ghost" %>
   </div>
 <% end  %>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
