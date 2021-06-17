@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :meetings, foreign_key: :mentoree_id
+  has_many :meetings, foreign_key: :mentoree_id, dependent: :destroy
   has_many :reviews, through: :meetings
 
 
@@ -61,7 +61,7 @@ class User < ApplicationRecord
     self.meetings.joins(:availability).where('slot > ?', DateTime.now).order(:slot)
   end
 
-  def get_advice_preference
-    self.advice_preferences
+  def get_subjects
+    JSON.parse(self.advice_preferences&.last.subject).reject(&:empty?)
   end
 end

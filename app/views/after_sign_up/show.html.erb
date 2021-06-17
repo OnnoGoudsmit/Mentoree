@@ -4,7 +4,7 @@
       <div class="row profile-info">
         <div class="mentor-avatar-big col-3 align-self-center">
               <% if @mentor.photo.attached? %>
-                <%= cl_image_tag @mentor.photo.key, class: 'avatar-medium', crop: :fill %>
+                <%= cl_image_tag @mentor.photo.key, class: 'avatar-large', crop: :fill %>
               <% else %>
                 <img class="avatar-medium" src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png" alt="">
               <% end %>
@@ -23,21 +23,23 @@
           <h3> <%= @mentor.reviews.where(rating: true).count %> <i class="far fa-thumbs-up"></i></h3>
         </div>
       </div>
-      <div class="date-selection container-form pt-3">
-        <h3 class="text-center pb-2">Pick a meeting date and time</h3>
-        <%= simple_form_for @meeting do |f| %>
-          <%= f.input :availability_id,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: @slots,
-            label_method: :format_time,
-            legend_tag: false %>
-          <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
-        <% end %>
-      </div>
+      <% unless @upcoming_meeting || !@slots %>
+        <div class="date-selection container-form pt-3">
+          <h3 class="text-center pb-2">Pick a meeting date and time</h3>
+          <%= simple_form_for @meeting do |f| %>
+            <%= f.input :availability_id,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              collection: @slots,
+              label_method: :format_time,
+              legend_tag: false %>
+            <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
+          <% end %>
+        </div>
+      <% end %>
         <h2 class="text-center mt-4">Mentor's Reviews </h2>
         <% if meeting = current_user.meetings.joins(:availability).find_by(availabilities: { mentor_id: @mentor.id }) %>
           <% end %>

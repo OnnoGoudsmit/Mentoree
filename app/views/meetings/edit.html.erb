@@ -1,20 +1,28 @@
-<div class="row">
+<div class="row prep-content-page">
     <div class="col-8 offset-2 card">
       <div class="row">
         <div class="col-12">
-          <h2>Prepare your meeting</h2>
+          <h2 class='pt-3'>Prepare your meeting</h2>
           <h4>To make sure you and your mentor can properly prepare for your meeting, make sure to think of some questions you can ask your mentor</h4>
           <%= simple_form_for(@meeting, html: { method: :put }) do |f| %>
             <div class="form-inputs">
-              <%= f.input :prep_content %>
+              <%= f.input :prep_content, label: false %>
             </div>
             <div class="form-actions">
               <%= f.submit "Submit your questions", class: "btn btn-flat"%>
             </div>
           <% end %>
-          <%# @subjects.each do |subject| %>
-            <%#= subject.subject %>
-          <%# end %>
+          <h3 class='pt-3'>Here we have some inspiration questions about your chosen topics:</h3>
+          <div class="example-questions row">
+          <% @subjects.each do |subject| %>
+            <div class="subject-questions card">
+            <h4><%= subject %></h4>
+            <% @questions[subject.to_sym].each do |question| %>
+            <p>"<%= question %>"</p>
+            <% end %>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
