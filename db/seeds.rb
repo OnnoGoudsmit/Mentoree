@@ -27,14 +27,14 @@ User.destroy_all
 work_experience = [
     "Computer science graduate trained in C, C++, Ruby on Rails, HTML, CSS,JavaScript, Python",
     "Co-Founder of techlab XR - 2006",
-    "Co-Founder of techlab XR - 2001",
+    "Co-Founder of VentGrid - 2001",
     "Founder of BNB IQ - 2010",
     "Founder of NOMICS",
     "CTO Metallar - 2017",
     "CTO Archtype IT - 2012",
     "Team manager Techclassy - 2003",
     "Lead Developer GranFave B.V. - 2013",
-    "Lead Developer Techeme - 2007",
+    "Developer Techeme - 2007",
     "Lead Developer Intech - 2005"
   ]
 
@@ -44,7 +44,7 @@ mentor1 = User.new(
   first_name: "Thomas",
   last_name: "Crane",
   age: 41,
-  city: "Rotterdam",
+  city: "Amsterdam",
   phone_number: 3053454123,
   about: "Energetic Adobe Certified Expert (ACE) web designer with 6+ years of experience. Seeking to enhance design excellence at Dujo International. Designed 5 responsive websites per month for Amphimia Global with 99 client satisfaction.",
   email: "thomas@email.com",
@@ -62,7 +62,7 @@ mentor2 = User.new(
   first_name: "Sascha",
   last_name: "Akman",
   age: 35,
-  city: "Amsterdam",
+  city: "Haarlem",
   phone_number: 2233454123,
   about: "Built and maintained a working customer database, order system, and picking and packing system with MySQL, complete with error handling and data validation.",
   email: "sascha@email.com",
@@ -263,7 +263,7 @@ mentoree_array = [user_chris, user_taliyah, user_joshua, user_lorena]
 puts "Creating reviews array"
 
 reviews = ["Extremely happy with my mentor meeting. It gave me a new perspective about my field.",
-    "Meet up.",
+    "Meet up was great. Extremely happy with what I've learned.",
     "Just finished my masters and I had no idea how to approach looking for a job in my field. My mentor gave me some good advice to start replying to openings.",
     "Glad I could finally have a chat the founder of a tech start-up. Considering doing that myself! Thank you tons.",
     "Amazing help. Helped me get a clear view on how to proceed with job hunting.",

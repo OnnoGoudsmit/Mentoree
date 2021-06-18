@@ -19,9 +19,9 @@
           <h3><%= @mentor.user_industry.industry.name %></h3>
           <p><%= @mentor&.about %></p>
           <ul>
-             <li><%= @work_experience.sample  %></li>
-             <li><%= @work_experience.sample  %></li>
-             <li><%= @work_experience.sample  %></li>
+             <li><%= @work_experience[1]  %></li>
+             <li><%= @work_experience[5]  %></li>
+             <li><%= @work_experience[3]  %></li>
           </ul>
         </div>
         <div class="stats-mentor p-3 col-2">
@@ -32,7 +32,7 @@
       </div>
       <% unless @upcoming_meeting || !@slots %>
         <div class="date-selection container-form pt-3">
-          <h3 class="text-center pb-2">Pick a meeting date and time</h3>
+          <br><h3 class="text-center pb-2">Pick a meeting date and time</h3><br>
           <%= simple_form_for @meeting do |f| %>
             <%= f.input :availability_id,
               as: :radio_buttons,
@@ -43,6 +43,7 @@
               collection: @slots,
               label_method: :format_time,
               legend_tag: false %>
+              <br>
             <%= f.button :submit, "Choose Mentor", class: "btn btn-flat" %>
           <% end %>
         </div>

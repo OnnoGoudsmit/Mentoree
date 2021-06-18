@@ -42,8 +42,14 @@
   background-color: $m-grey-blue;
 }
 
+.thumbs-up + label {
+  color: grey;
+  font-size: 13px;
+}
+
 .thumbs-up:checked + label {
-  color: #1512B8;;
+  color: #1512B8;
+  font-size: 15px;
 }
 
 .sign-up-illustration {
