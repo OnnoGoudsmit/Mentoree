@@ -2,12 +2,14 @@
   <div class='homepage-text'>
     <h1 class="h1-homepage">Need some career advice?</h1>
     <h4>We got you.</h4>
-    <p>Join us so we can connect you to an experienced mentor in various fields of work for free! These mentors have volunteer to guide and help professionals make the right career choices.</p>
-
+    <p>Join us so we can connect you with an experienced
+    mentor in any industry. These mentors have
+    volunteered to guide and help you in having a
+    pleasant and healthy career.</p>
     <% unless user_signed_in? %>
-      <div>
-        <%= link_to "Sign up", new_user_registration_path, class:"btn btn-flat"  %>
-      </div>
+    <div>
+      <%= link_to "Sign up", new_user_registration_path, class:"btn btn-flat"  %>
+    </div>
     <% end %>
   </div>
 
@@ -23,7 +25,14 @@
   <div id="about" class="home-page-block-2">
     <div class='homepage-text'>
       <h1 class="h1-homepage">Who are we?</h1>
-      <p>Join us so we can connect you to an experienced mentor in various fields of work. These mentors have volunteer to guide and help others. Join us so we can connect you to an experienced mentor in various fields of work. These mentors have volunteer to guide and help others.</p>
+      <p>Mentoree has been created to help any of us create a
+      healthy and enjoyable career oriented life. All around us
+      millennials seem to be struggling with their career choices
+      and we believe it's because we are not motivated to stop and ask
+      for guidance every now and then. Mentoree brings together a community
+      of experienced mentors and connects them to anyone looking for career
+      guidance and advice. in their particular field.
+      Sign up to learn more about us!</p>
     </div>
 
     <div>
@@ -48,16 +57,16 @@
         <%= image_tag "mentoree-illustration-9.png", alt: "mentoree-image", height: 100 %>
       </div>
       <div class="how-it-works">
-        <%= image_tag "mentoree-illustration-6.png", alt: "mentoree-image", height: 100 %>
+        <%= image_tag "mentoree-illustration-10.png", alt: "mentoree-image", height: 100 %>
         <h4>Choose and industry and advice topics.</h4>
       </div>
       <div class="how-it-works">
-        <h4>We will suggets you a mentor in that industry.</h4>
-        <%= image_tag "mentoree-illustration-10.png", alt: "mentoree-image", height: 100 %>
+        <h4>We will connect you a mentor in that industry.</h4>
+        <%= image_tag "mentoree-illustration-6.png", alt: "mentoree-image", height: 100 %>
       </div>
       <div class="how-it-works">
         <%= image_tag "mentoree-illustration-11.png", alt: "mentoree-image", height: 100 %>
-        <h4>Chat, call or meet up with your mentor.</h4>
+        <h4>Chat, call or meet up with your mentor to learn.</h4>
       </div>
     </div>
 

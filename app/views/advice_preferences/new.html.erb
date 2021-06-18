@@ -4,20 +4,20 @@
     <div class="col-8 offset-2 card p-3">
       <div class="card-advice-preference">
         <div class="back-button">
-          <%= link_to root_path do %>
+          <%= link_to my_dashboard_path do %>
             <i class="fas fa-arrow-left"></i>
           <% end %>
         </div>
 
         <h2>Meeting topics</h2>
         <br>
-        <p>Select an indsutry you would like to know more about.</p>
+        <p>Select an industry you would like to know more about.</p>
 
         <%= simple_form_for [ @user, @advice_preference ], url: after_sign_up_advice_preferences_path(@user) do |f| %>
           <div class="form-inputs col-10 offset-1 p-4">
             <%= f.association :industry, label: false, prompt: 'Industry' %>
           </div>
-            <p>Selec the topics you would like to talk about.</p>
+            <p>Choose some topics you would like to talk about.</p>
             <br>
 
             <%= f.input :subject, as: :check_boxes, collection: AdvicePreference::SUBJECTS.keys, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item', legend_tag: false  %>

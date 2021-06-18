@@ -22,13 +22,15 @@
   text-align: center;
   padding: 15px;
   border: 1px solid $m-light-purple;
-  border-radius: 4px;
+  border-radius: 20px;
   background-color: white;
 }
 
+
+
 .category-selector:checked + label {
-  color: white !important;
-  background: $m-light-purple;
+  color: $m-purple !important;
+  border: 2px solid $m-dark-purple;
 }
 
 #snippet_category_css + label {
