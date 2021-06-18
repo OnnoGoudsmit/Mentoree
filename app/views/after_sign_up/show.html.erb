@@ -52,7 +52,7 @@
         <% if meeting = current_user.meetings.joins(:availability).find_by(availabilities: { mentor_id: @mentor.id }) %>
           <% end %>
 
-          <% @mentor.mentors_reviews.each do |review| %>
+          <% @mentor.mentors_reviews.order(created_at: :desc).each do |review| %>
           <% mentoree = review.meeting.mentoree %>
             <div class='row'>
               <div class="col-8 offset-2 card card-dashboard-review mb-3">
