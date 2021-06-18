@@ -38,8 +38,9 @@
 }
 
 .form-control {
-  border-radius: 50px;
+  border-radius: 10px;
   background-color: $m-grey-blue;
+  min-height: 120px;
 }
 
 .thumbs-up + label {
