@@ -5,7 +5,7 @@
           <h2 class='py-3'>Prepare your meeting</h2>
           <%= simple_form_for(@meeting, html: { method: :put }) do |f| %>
             <div class="form-inputs">
-              <%= f.input :prep_content, label: false, placeholder: 'To make sure you and your mentor can properly prepare for your meeting, make sure to think of some questions you can ask your mentor' %>
+              <%= f.input :prep_content, class: "text-field", label: false, placeholder: 'To make sure you and your mentor can properly prepare for your meeting, make sure to think of some questions you can ask your mentor' %>
             </div>
             <div class="form-actions">
               <%= f.submit "Submit your questions", class: "btn btn-flat"%>
