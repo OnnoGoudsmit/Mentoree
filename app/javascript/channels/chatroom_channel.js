@@ -9,6 +9,8 @@ const initChatroomCable = () => {
       received(data) {
         messagesContainer.insertAdjacentHTML('beforeend', data); // called when data is broadcast in the cable
         messagesContainer.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        const messageInput = document.getElementById('message_content')
+        messageInput.value = ''
       }
     });
   }
