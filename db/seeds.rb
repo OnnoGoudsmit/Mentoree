@@ -274,7 +274,7 @@ puts "Creating 3 future availabilities"
 mentors_array.each do |mentor|
   3.times do |index|
     date = DateTime.now
-    date.change(hour: rand(9..18))#.to_a.sample)
+    date = date.change(hour: rand(9..18), min: 0)#.to_a.sample)
     Availability.create(
       mentor_id: mentor.id,
       slot: date + rand(1..14)
