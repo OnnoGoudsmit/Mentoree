@@ -14,7 +14,7 @@ end
 puts 'Destroying all industries'
 Industry.destroy_all
 puts 'Creating Industries'
-industries_array = ["Agriculture", "Computer-science", "Education", "Financial services" "Health services", "Hospitality services", "Industrial Design", "Mechanical and electrical engineering", "Sports", "Web-development"]
+industries_array = ["Agriculture", "Computer-science", "Education", "Financial services", "Health services", "Hospitality services", "Industrial Design", "Mechanical and electrical engineering", "Sports", "Web-development"]
 industries_array.map { |industry_name| puts Industry.create(name: industry_name ) }
 puts 'Finished creating Industries'
 
